@@ -15,21 +15,20 @@ const List = styled.li`
         color: #fff;
         font-weight: bold;
         letter-spacing: -1px;
-        background-color: #ffdd00;
         content: 'NEW';
         opacity: ${props => props.transparency};
     }
 
     &::after{
         position: absolute;
-        top: 24px;
-        left: -11px;
+        top: 12px;
+        left: -17px;
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         margin-right: 10px;
-        font-size: 25px;
-        color: #ffdd00;
-        content: "\f0a3";
+        font-size: 40px;
+        /* color: #ffdd00; */
+        content: "\f0a4";
         opacity: ${props => props.transparency};
     }
 `
@@ -108,7 +107,8 @@ const BadgeType= styled.span`
     color: #fff;
     line-height: 21px;
     border-radius: 3px;
-    background-color: #3377FF;
+    border-radius: 100px;
+    background-color: #415a8d;
 `
 
 const Location = styled.span`
@@ -136,7 +136,7 @@ const Day = styled.span`
 
 const Card = ({item})=>{
     const getDate = ()=>{
-        const dateA = new Date();
+        const dateA = new Date('2023-02-18');
         const dateB = new Date(item.createdAt.slice(0,10));
         return Math.floor((dateA.getTime() - dateB.getTime())/(24 * 60 * 60 * 1000));
     }

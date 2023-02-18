@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Button from "../../base/Button"
 import Input from "../../base/Input"
 import SearchCount from "../../base/SearchCount"
+import banner from "../../../assets/images/banner.gif"
 
 const SubTit = styled.div`
     display: grid;
@@ -9,7 +10,8 @@ const SubTit = styled.div`
     justify-content: center;
     width: 100%;
     height: 223px;
-    background-color: #333333;
+    background-image: url(${banner});
+    background-position: center;
 `
 const Strong = styled.strong`
     font-size: 27px;
@@ -33,7 +35,7 @@ const Nav = ()=>{
     return(
         <div className="container-search">
             <SubTit>
-                <Strong>DKTechin 구인 현황</Strong>
+                <Strong>MEGA MELON 구인 현황</Strong>
                 <WrapSearch>
                     <BundleInp>
                         <Input />

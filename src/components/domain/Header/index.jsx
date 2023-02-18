@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const MainTit = styled.div`
-    background-color: #1A1A1A;
+    background-color: #00020a;
 `
 
 const InnerMain = styled.div`
@@ -19,7 +19,7 @@ const DocTitle = styled.h1`
     margin: 21px 0;
 `
 
-const DKJobs = styled.a`
+const Jobs = styled.a`
     display: block;
     height: 37px;
     color: #fff;
@@ -31,7 +31,7 @@ const Header = ()=>{
             <MainTit>
                 <InnerMain>
                     <DocTitle>
-                        <DKJobs>DK Jobs</DKJobs>
+                        <Jobs>MEGA MELON</Jobs>
                     </DocTitle>
                 </InnerMain>
             </MainTit>

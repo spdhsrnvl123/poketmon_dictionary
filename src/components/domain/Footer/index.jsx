@@ -21,7 +21,7 @@ const DocFooter = styled.footer`
             color: #999;
         }
         .area_link{
-            a{
+            span{
                 margin-left: 10px;
                 font-size: 14px;
                 color: #999;
@@ -34,12 +34,11 @@ const Footer = ()=>{
     return(
         <DocFooter>
             <div className="inner_footer">
-            <small>&copy; 2021 dktechin.com</small>
+            <small>&copy; 2023 MEGA MELON</small>
             <div className="area_link">
-                {/* target="_blank" 이슈해결 벨로그 확인 */}
-                <a target="_blank" rel="noopener noreferrer" href="https://dktechin.com/service/introduce/company">회사소개</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://dktechin.com/service/careers/process">채용절차</a>
-                <a target="_blank" rel="noopener noreferrer" href="https://dktechin.com/service/careers/job">직무소개</a>
+                <span>회사소개</span>
+                <span>채용절차</span>
+                <span>직무소개</span>
             </div>
             </div>
         </DocFooter>

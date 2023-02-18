@@ -20,9 +20,13 @@ const ContentArticle = styled.div`
     grid-area: content;
     width: 700px;
     margin-right: 29px;
+    h3{
+        text-align: center;
+    }
 `
 
 const ListJob = styled.ul`
+    margin-top: 17px;
     margin-bottom: 27px;
     
     li{
@@ -48,8 +52,6 @@ const ListJob = styled.ul`
 const Main = ()=>{
     let data = useSelector((state)=> state);
     let dispatch = useDispatch()
-
-    console.log(data)
 
     useEffect(()=>{
         dispatch(asyncUpFetch())
@@ -78,7 +80,7 @@ const Main = ()=>{
                 <h2 className="screen_out">채용 데모 페이지 본문</h2>
                 <MainContent>
                     <ContentArticle>
-                        <h3 className="screen_out">채용 목록</h3>
+                        <h3>채용 목록 <span style={{color:"#999"}}>2023-02-18 업데이트 완료</span></h3>
                         <ListJob>
                             {
                                 data.cardData.status === "fail"?<span style={{color:"red",fontSize:"18px"}}>통신과정에서 에러가 발생하였습니다.</span>:

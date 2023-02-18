@@ -9,6 +9,8 @@ const ResultText = styled.p`
 
 const ResultNumber = styled.em`
     color: #ffdd00;
+    font-size: 26px;
+    background-color: black;
 `
 
 const SearchCount = ()=>{

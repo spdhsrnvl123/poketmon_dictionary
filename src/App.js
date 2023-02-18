@@ -9,6 +9,7 @@ const ContainerDoc= styled.div`
     min-width: 1180px;
 `
 function App() {
+
   return (
     <>
       <GlobalStyle />

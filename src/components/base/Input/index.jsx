@@ -25,7 +25,7 @@ const Input = ()=>{
     // console.log(item.searchData)
 
     return(
-        <Search onChange={onSearch} type="text" />
+        <Search onChange={onSearch} type="text" placeholder="직무, 기술 키워드를 검색해보세요." />
     )
 }
 
