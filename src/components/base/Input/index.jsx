@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react"
 import { useDispatch} from "react-redux"
 import styled from "styled-components"
 import { InputData } from "../../../redux/search"
@@ -16,6 +17,11 @@ const Search = styled.input`
 `
 
 const Input = ()=>{
+    const ref = useRef();
+
+    useEffect(()=>{
+        ref.current.focus()
+    })
     // let item = useSelector((state)=> state);
     let dispatch = useDispatch();
     const onSearch = (e)=>{
@@ -25,7 +31,7 @@ const Input = ()=>{
     // console.log(item.searchData)
 
     return(
-        <Search onChange={onSearch} type="text" placeholder="직무, 기술 키워드를 검색해보세요." />
+        <Search onChange={onSearch} ref={ref} type="text" placeholder="직무, 기술 키워드를 검색해보세요." />
     )
 }
 
