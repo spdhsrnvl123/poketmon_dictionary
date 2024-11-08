@@ -1,13 +1,19 @@
-# 🍈 MEGA MELON
+# MEGA MELON
 
 ![mega-melon](https://user-images.githubusercontent.com/83896466/221178757-74624da2-72cd-4a87-831c-2b04a36a83bf.gif)
 
+---
+### ❗️프로젝트 리뉴얼 계획
+- 개발자들을 위한 채용 플랫폼 진행 예정
+- 반응형으로 진행 예정
+- 사람인 API 를 활용 예정
+---
 
-## 🚀배포
+## 배포
 https://spdhsrnvl123.github.io/MEGA-MELON/
 
 
-## 🪄 프로젝트 실행 방법
+## 프로젝트 실행 방법
 1. git clone하여 프로젝트를 내려받습니다.
     ```bash
     git clone https://github.com/spdhsrnvl123/MEGA-MELON.git
@@ -22,7 +28,7 @@ https://spdhsrnvl123.github.io/MEGA-MELON/
     ```
 
 
-## 🧰 기술 스택 및 구현 사항
+## 기술 스택 및 구현 사항
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled components&logoColor=black">
 ### 🌈 사용 라이브러리 버전 정보
 - react 18.2.0
@@ -32,13 +38,13 @@ https://spdhsrnvl123.github.io/MEGA-MELON/
 
 ### 구현 사항
 
-### 🔨라이브러리를 활용한 구현 사항
+### 라이브러리를 활용한 구현 사항
 - `Redux-toolkit`에 thunk를 이용하여 비동기 데이터 통신을 구현하였습니다.
 - `Redux-toolkit`을 이용하여 상태관리를 구현하였습니다.
 - `styled-components`를 이용하여 개별 CSS파일을 만들지 않고 하나의 컴포넌트들로 구성하였습니다.
 - `styled-components`의 내장 API인 createGlobalStyle을 이용하여 전역 스타일링을 하였습니다.
 
-## 📂 디렉토리 구조
+## 디렉토리 구조
 ```
 src
  ├── components      
