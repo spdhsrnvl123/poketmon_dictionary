@@ -153,31 +153,35 @@ const Card = ({item})=>{
         }
     }
 
-    return(
-        <>
-            <List transparency = { getDate() <= 2  ? 1 : 0}>
-                <TitleJob>
-                    <a href="#none" className="link_title">
-                        <strong>{item.title}<em>{item.type}</em></strong>
-                    </a>
-                    <BundleBadge>
-                        {item.keywords.map((v,i)=>{
+    return (
+      <>
+        {/* <List transparency = { getDate() <= 2  ? 1 : 0}> */}
+        <List>
+          <TitleJob>
+            <a href="#none" className="link_title">
+              {/* <strong>{item.title}<em>{item.type}</em></strong> */}
+            </a>
+            <BundleBadge>
+              {/* {item.keywords.map((v,i)=>{
                             return(
                                 <a key={i} href="#none">{v}</a>
                             )
-                        })}
-                    </BundleBadge>
-                </TitleJob>
-                <DescJob>
-                    <BadgeType>{item.job}</BadgeType>
-                    <WrapTxt>
-                        <Day>{resentData()}</Day>
-                        <Location>{item.location}</Location>
-                    </WrapTxt>
-                </DescJob>
-            </List>
-        </>
-    )
+                        })} */}
+            </BundleBadge>
+          </TitleJob>
+          <DescJob>
+            {/* <BadgeType>{item.job}</BadgeType> */}
+            <BadgeType>123</BadgeType>
+            <WrapTxt>
+              {/* <Day>{resentData()}</Day> */}
+              {/* <Location>{item.location}</Location> */}
+              <Location>123</Location>
+            </WrapTxt>
+          </DescJob>
+        </List>
+        {/* </List> */}
+      </>
+    );
 }
 
 export default Card

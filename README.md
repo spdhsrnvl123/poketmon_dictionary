@@ -1,6 +1,4 @@
-# MEGA MELON
-
-![mega-melon](https://user-images.githubusercontent.com/83896466/221178757-74624da2-72cd-4a87-831c-2b04a36a83bf.gif)
+# Developer Notice
 
 ---
 ### ❗️프로젝트 리뉴얼 계획

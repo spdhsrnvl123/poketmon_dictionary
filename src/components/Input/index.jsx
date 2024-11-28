@@ -22,13 +22,10 @@ const Input = ()=>{
     useEffect(()=>{
         ref.current.focus()
     })
-    // let item = useSelector((state)=> state);
     let dispatch = useDispatch();
     const onSearch = (e)=>{
         dispatch(InputData(e.target.value))
     }
-
-    // console.log(item.searchData)
 
     return(
         <Search onChange={onSearch} ref={ref} type="text" placeholder="직무, 기술 키워드를 검색해보세요." />
