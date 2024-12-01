@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
-import { asyncUpFetch } from "../../../redux/card"
-import Card from "../Card"
-import { UpdateNumber } from "../../../redux/count"
+import { asyncUpFetch } from "../../store/card/index"
+import Card from "../../components/Card"
+import { UpdateNumber } from "../../store/count"
 
 const MainContent = styled.div`
     display: grid;
@@ -49,7 +49,7 @@ const ListJob = styled.ul`
 
 `
 
-const Main = ()=>{
+const CardBoxPage = ()=>{
     let data = useSelector((state)=> state);
     let dispatch = useDispatch()
 
@@ -98,4 +98,4 @@ const Main = ()=>{
     )
 }
 
-export default Main;
+export default CardBoxPage;

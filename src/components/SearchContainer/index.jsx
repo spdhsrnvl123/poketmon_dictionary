@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components"
 
 const SubTit = styled.nav`
@@ -32,10 +34,8 @@ const ResultNumber = styled.em`
   font-size: 26px;
   /* background-color: black; */
 `;
-
-
 const SearchContainer = ()=>{
-  // const data = useSelector((state)=>state);
+  const data = useSelector((state)=>state);
 
   return (
     <SubTit>
@@ -47,11 +47,8 @@ const SearchContainer = ()=>{
           </button>
         </BundleInp>
       </WrapSearch>
-      {/* <ResultText>
-        검색 결과 <ResultNumber>{data.countData}</ResultNumber>건
-      </ResultText> */}
       <ResultText>
-        검색 결과 <ResultNumber>123</ResultNumber>건
+        검색 결과 <ResultNumber>{data.countData}</ResultNumber>건
       </ResultText>
     </SubTit>
   );

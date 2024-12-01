@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from 'styled-components';
-import SearchContainer from './components/SearchContainer';
+import React from "react";
+import styled from "styled-components";
+import SearchContainer from "./components/SearchContainer";
+import CardBoxPage from "./pages/CardBoxPage";
 
 const Title = styled.h1`
   display: block;
@@ -37,11 +38,11 @@ const Footer = styled.footer`
 `;
 
 function App() {
-  
   return (
     <>
       <Title>Developer Notice</Title>
       <SearchContainer />
+      <CardBoxPage />
       <Footer>
         <div className="inner_footer">
           <small>&copy; 2024 Developer Notice</small>
@@ -55,4 +56,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

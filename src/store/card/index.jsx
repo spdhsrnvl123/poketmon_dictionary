@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const asyncUpFetch = createAsyncThunk(
     'getData/asyncUpFetch',
     async ()=>{
-        const response = await fetch("https://mega-melon-server.herokuapp.com/jobList")
+        const response = await fetch("http://localhost:4000/jobList");
         const data = await response.json();
         let sortedItem = data.sort((a,b)=>(
             new Date(b.createdAt) - new Date(a.createdAt)
