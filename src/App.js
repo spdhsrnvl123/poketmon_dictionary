@@ -2,26 +2,29 @@ import React from "react";
 import styled from "styled-components";
 import SearchContainer from "./components/SearchContainer";
 import CardBoxPage from "./pages/CardBoxPage";
+import GlobalStyle from "./assets/styles/GlobalStyle";
 
 const Title = styled.h1`
   display: block;
   height: 37px;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
 `;
 
 const Footer = styled.footer`
-  width: 100%;
-  height: 70px;
+  min-width: 100%;
   background-color: #ffffff;
   position: absolute;
   bottom: 0;
   z-index: 2; //footer 문제로 z-index 추가.
+  padding-top:10px;
+  padding-bottom: 10px;
 
   .inner_footer {
     display: flex;
     justify-content: space-between;
-    width: 916px;
-    margin: 0 auto;
-    padding-top: 22px;
+    margin: 0 5px;
     small {
       font-size: 12px;
       line-height: 21px;
@@ -29,7 +32,7 @@ const Footer = styled.footer`
     }
     .area_link {
       span {
-        margin-left: 10px;
+        padding-left: 10px;
         font-size: 14px;
         color: #999;
       }
@@ -40,6 +43,7 @@ const Footer = styled.footer`
 function App() {
   return (
     <>
+      <GlobalStyle />
       <Title>Developer Notice</Title>
       <SearchContainer />
       <CardBoxPage />
@@ -47,8 +51,9 @@ function App() {
         <div className="inner_footer">
           <small>&copy; 2024 Developer Notice</small>
           <div className="area_link">
-            <span>인스타그램</span>
-            <span>유튜브</span>
+            <span>회사소개</span>
+            <span>채용절차</span>
+            <span>직무소개</span>
           </div>
         </div>
       </Footer>

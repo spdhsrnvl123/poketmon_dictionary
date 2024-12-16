@@ -1,16 +1,19 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components"
+import Input from "../Input";
+import bgImage from "../../assets/images/bg.jpg"
 
 const SubTit = styled.nav`
-    display: grid;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 223px;
-    background-position: center;
-    background-color: skyblue;
-`
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 223px;
+  background-image: url(${bgImage});
+  background-size: cover; /* 배경 이미지를 컨테이너에 맞게 꽉 채움 */
+  background-position: center; /* 이미지 중앙에 고정 */
+  background-repeat: no-repeat; /* 배경 반복 없음 */
+`;
 
 const WrapSearch = styled.div`
     margin: 8px 0 14px;
@@ -41,10 +44,7 @@ const SearchContainer = ()=>{
     <SubTit>
       <WrapSearch>
         <BundleInp>
-          {/* <Input /> */}
-          <button>
-            <span className="ir_pm">검색</span>
-          </button>
+          <Input />
         </BundleInp>
       </WrapSearch>
       <ResultText>
