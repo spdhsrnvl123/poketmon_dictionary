@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { FaCalendarDay } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 
 const List = styled.li`
+  position: relative;
   &::before {
     position: absolute;
     left: 0;
@@ -83,17 +86,15 @@ const BundleBadge = styled.span`
 `;
 
 const DescJob = styled.div`
-display: inline-block;
-flex-direction: column;
-/* background-color: blue; */
-position: relative;
-top:-120%;
-right: -90%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: 20%;
+  background-color:#f7fafe;
 `;
 
 const WrapTxt = styled.div`
-  margin-top: 9px;
-  font-size: 0;
   span {
     & + span {
       margin-left: 10px;
@@ -101,37 +102,32 @@ const WrapTxt = styled.div`
   }
 `;
 
-const BadgeType = styled.span`
+const BadgeType = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 0 7px;
   font-size: 10px;
   font-weight: bold;
   color: #fff;
-  line-height: 21px;
-  border-radius: 100px;
   background-color: #415a8d;
+  white-space: nowrap;
 `;
 
-const Location = styled.span`
-  display: inline-block;
+const Location = styled.div`
+  position: absolute;
+  bottom: 18px;
+  right: 2px;
   font-size: 12px;
-  &::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 5px;
-    font-size: 10px;
-    content: "\f3c5";
-  }
+  white-space: nowrap;
 `;
-const Day = styled.span`
-  display: inline-block;
+
+const Day = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 2px;
   font-size: 12px;
-  &::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-    margin-right: 5px;
-    font-size: 10px;
-    content: "\f017";
-  }
+  white-space: nowrap;
 `;
 
 const Card = ({ item }) => {
@@ -153,13 +149,13 @@ const Card = ({ item }) => {
     } else if (getDate() === 2) {
       return "2 day ago";
     } else {
-      return item.createdAt.slice(0, 10);
+      return item.createdAt.slice(5, 10);
     }
   };
 
   return (
     <>
-      <List transparency = { getDate() <= 2  ? 1 : 0}>
+      <List transparency={getDate() <= 2 ? 1 : 0}>
         <TitleJob>
           <a href="#none" className="link_title">
             <strong>
@@ -180,8 +176,13 @@ const Card = ({ item }) => {
         <DescJob>
           <BadgeType>{item.job}</BadgeType>
           <WrapTxt>
-            <Day>{resentData()}</Day>
-            <Location>{item.location}</Location>
+            <Day>
+              <FaCalendarDay />~{resentData()}
+            </Day>
+            <Location>
+              <FaLocationDot />
+              {item.location}
+            </Location>
           </WrapTxt>
         </DescJob>
       </List>

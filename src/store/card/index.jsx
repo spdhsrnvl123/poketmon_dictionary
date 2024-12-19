@@ -19,16 +19,14 @@ let cardData = createSlice({
         status : "Loading"
     },
     extraReducers : (builder)=>{
-        builder.addCase(asyncUpFetch.pending, (state,action)=>{
+        builder.addCase(asyncUpFetch.pending, (state, action)=>{
             state.status = "Loading";
-
         })
-        builder.addCase(asyncUpFetch.fulfilled, (state,action)=>{
+        builder.addCase(asyncUpFetch.fulfilled, (state, action)=>{
             state.value = action.payload;
             state.status = 'complete';
-
         })
-        builder.addCase(asyncUpFetch.rejected, (state,action)=>{
+        builder.addCase(asyncUpFetch.rejected, (state, action)=>{
             state.status = 'fail';
             console.log("error")
         })
