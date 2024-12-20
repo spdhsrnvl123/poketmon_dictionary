@@ -8,9 +8,9 @@ import { UpdateNumber } from "../../store/count";
 const MainContent = styled.div`
   display: flex;
   justify-content: center;
-  height: calc(100vh - 30px);
+  height: calc(100vh - 293px);
   overflow: scroll;
-  padding: 29px 0 43px;
+  padding-top:29px;
   background-color: #f8f8f9;
 `;
 
@@ -24,8 +24,7 @@ const ContentArticle = styled.div`
 
 const ListJob = styled.ul`
   margin-top: 17px;
-  /* margin-bottom: 27px; */
-
+  padding-bottom: 48px;
   li {
     position: relative;
     align-items: center;
