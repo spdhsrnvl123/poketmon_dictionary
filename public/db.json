@@ -6,7 +6,7 @@
       "type": "정규직",
       "keywords": ["Frontend", "Vue", "React", "HTML", "CSS", "ES6", "Git"],
       "location": "판교",
-      "createdAt": "2023-02-04T11:10:04+09:00"
+      "createdAt": "2024-12-04T11:10:04+09:00"
     },
     {
       "title": "프론트엔드 개발자",
@@ -14,7 +14,7 @@
       "type": "정규직",
       "keywords": ["Frontend", "React", "HTML", "CSS", "ES6", "Git"],
       "location": "제주",
-      "createdAt": "2023-02-15T11:10:04+09:00"
+      "createdAt": "2024-12-15T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -22,7 +22,7 @@
       "type": "계약직",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "가산",
-      "createdAt": "2023-01-28T11:10:04+09:00"
+      "createdAt": "2024-12-20T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -30,7 +30,7 @@
       "type": "인턴",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "판교",
-      "createdAt": "2023-02-11T11:10:04+09:00"
+      "createdAt": "2024-12-11T11:10:04+09:00"
     },
     {
       "title": "웹 서비스 기획자",
@@ -45,7 +45,7 @@
         "Storyboard"
       ],
       "location": "판교",
-      "createdAt": "2023-02-06T11:10:04+09:00"
+      "createdAt": "2024-12-06T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -53,7 +53,7 @@
       "type": "정규직",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "제주",
-      "createdAt": "2023-02-03T11:10:04+09:00"
+      "createdAt": "2024-12-03T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -61,7 +61,7 @@
       "type": "정규직",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "가산",
-      "createdAt": "2023-01-27T11:10:04+09:00"
+      "createdAt": "2024-12-17T11:10:04+09:00"
     },
     {
       "title": "웹 디자이너",
@@ -69,7 +69,7 @@
       "type": "정규직",
       "keywords": ["디자인", "Photoshop", "Illustrator", "Zeplin"],
       "location": "판교",
-      "createdAt": "2023-01-30T11:10:04+09:00"
+      "createdAt": "2024-12-20T11:10:04+09:00"
     },
     {
       "title": "프론트엔드 개발자",
@@ -77,7 +77,7 @@
       "type": "프리랜서",
       "keywords": ["Frontend", "React", "HTML", "CSS", "ES6", "Git"],
       "location": "판교",
-      "createdAt": "2023-02-03T11:10:04+09:00"
+      "createdAt": "2024-12-03T11:10:04+09:00"
     },
     {
       "title": "프론트엔드 개발자",
@@ -85,7 +85,7 @@
       "type": "정규직",
       "keywords": ["Frontend", "React", "HTML", "CSS", "ES6", "Git"],
       "location": "제주",
-      "createdAt": "2023-02-06T11:10:04+09:00"
+      "createdAt": "2024-12-06T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -93,7 +93,7 @@
       "type": "프리랜서",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "가산",
-      "createdAt": "2023-02-17T11:10:04+09:00"
+      "createdAt": "2024-12-17T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -101,7 +101,7 @@
       "type": "프리랜서",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "판교",
-      "createdAt": "2023-02-10T11:10:04+09:00"
+      "createdAt": "2024-12-10T11:10:04+09:00"
     },
     {
       "title": "웹 서비스 기획자",
@@ -116,7 +116,7 @@
         "Storyboard"
       ],
       "location": "판교",
-      "createdAt": "2023-02-16T11:10:04+09:00"
+      "createdAt": "2024-12-16T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -124,7 +124,7 @@
       "type": "정규직",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "제주",
-      "createdAt": "2023-02-07T11:10:04+09:00"
+      "createdAt": "2024-12-07T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -132,7 +132,7 @@
       "type": "인턴",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "가산",
-      "createdAt": "2023-02-10T11:10:04+09:00"
+      "createdAt": "2024-12-10T11:10:04+09:00"
     },
     {
       "title": "웹 디자이너",
@@ -140,7 +140,7 @@
       "type": "정규직",
       "keywords": ["디자인", "Photoshop", "Illustrator", "Zeplin"],
       "location": "판교",
-      "createdAt": "2023-01-17T11:10:04+09:00"
+      "createdAt": "2024-12-17T11:10:04+09:00"
     },
     {
       "title": "웹 서비스 기획자",
@@ -155,7 +155,7 @@
         "Storyboard"
       ],
       "location": "가산",
-      "createdAt": "2023-01-27T11:10:04+09:00"
+      "createdAt": "2024-12-17T11:10:04+09:00"
     },
     {
       "title": "웹 디자이너",
@@ -163,7 +163,7 @@
       "type": "인턴",
       "keywords": ["디자인", "Photoshop", "Illustrator", "Zeplin"],
       "location": "판교",
-      "createdAt": "2023-02-14T11:10:04+09:00"
+      "createdAt": "2024-12-14T11:10:04+09:00"
     },
     {
       "title": "QA 테스터",
@@ -171,7 +171,7 @@
       "type": "인턴",
       "keywords": ["QA", "QC", "Jira", "Wiki", "GoogleWorkspace"],
       "location": "제주",
-      "createdAt": "2023-02-16T11:10:04+09:00"
+      "createdAt": "2024-12-16T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -179,7 +179,7 @@
       "type": "정규직",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "제주",
-      "createdAt": "2023-02-05T11:10:04+09:00"
+      "createdAt": "2024-12-05T11:10:04+09:00"
     },
     {
       "title": "QA 테스터",
@@ -187,7 +187,7 @@
       "type": "인턴",
       "keywords": ["QA", "QC", "Jira", "Wiki", "GoogleWorkspace"],
       "location": "판교",
-      "createdAt": "2023-02-04T11:10:04+09:00"
+      "createdAt": "2024-12-04T11:10:04+09:00"
     },
     {
       "title": "웹 디자이너",
@@ -195,7 +195,7 @@
       "type": "정규직",
       "keywords": ["디자인", "Photoshop", "Illustrator", "Zeplin"],
       "location": "가산",
-      "createdAt": "2023-01-28T11:10:04+09:00"
+      "createdAt": "2024-12-18T11:10:04+09:00"
     },
     {
       "title": "QA 테스터",
@@ -203,7 +203,7 @@
       "type": "프리랜서",
       "keywords": ["QA", "QC", "Jira", "Wiki", "GoogleWorkspace"],
       "location": "판교",
-      "createdAt": "2023-01-17T11:10:04+09:00"
+      "createdAt": "2024-12-17T11:10:04+09:00"
     },
     {
       "title": "프론트엔드 개발자",
@@ -211,7 +211,7 @@
       "type": "정규직",
       "keywords": ["Frontend", "Vue", "React", "HTML", "CSS", "ES6", "Git"],
       "location": "가산",
-      "createdAt": "2023-02-09T11:10:04+09:00"
+      "createdAt": "2024-12-09T11:10:04+09:00"
     },
     {
       "title": "프론트엔드 개발자",
@@ -219,7 +219,7 @@
       "type": "정규직",
       "keywords": ["Frontend", "Vue", "React", "HTML", "CSS", "ES6", "Git"],
       "location": "가산",
-      "createdAt": "2023-01-20T11:10:04+09:00"
+      "createdAt": "2024-12-20T11:10:04+09:00"
     },
     {
       "title": "웹 서비스 기획자",
@@ -234,7 +234,7 @@
         "Storyboard"
       ],
       "location": "가산",
-      "createdAt": "2023-01-17T11:10:04+09:00"
+      "createdAt": "2024-12-17T11:10:04+09:00"
     },
     {
       "title": "웹 디자이너",
@@ -242,7 +242,7 @@
       "type": "정규직",
       "keywords": ["디자인", "Photoshop", "Illustrator", "Zeplin"],
       "location": "판교",
-      "createdAt": "2023-01-29T11:10:04+09:00"
+      "createdAt": "2024-12-19T11:10:04+09:00"
     },
     {
       "title": "QA 테스터",
@@ -250,7 +250,7 @@
       "type": "정규직",
       "keywords": ["QA", "QC", "Jira", "Wiki", "GoogleWorkspace"],
       "location": "제주",
-      "createdAt": "2023-01-30T11:10:04+09:00"
+      "createdAt": "2024-12-20T11:10:04+09:00"
     },
     {
       "title": "백엔드 개발자",
@@ -258,7 +258,7 @@
       "type": "정규직",
       "keywords": ["Backend", "Java", "JPA", "MySQL", "Docker", "Git"],
       "location": "제주",
-      "createdAt": "2023-02-12T11:10:04+09:00"
+      "createdAt": "2024-12-12T11:10:04+09:00"
     },
     {
       "title": "QA 테스터",
@@ -266,7 +266,7 @@
       "type": "정규직",
       "keywords": ["QA", "QC", "Jira", "Wiki", "GoogleWorkspace"],
       "location": "판교",
-      "createdAt": "2023-02-04T11:10:04+09:00"
+      "createdAt": "2024-12-04T11:10:04+09:00"
     },
     {
       "title": "웹 디자이너",
@@ -274,7 +274,7 @@
       "type": "정규직",
       "keywords": ["디자인", "Photoshop", "Illustrator", "Zeplin"],
       "location": "가산",
-      "createdAt": "2023-02-03T11:10:04+09:00"
+      "createdAt": "2024-12-03T11:10:04+09:00"
     },
     {
       "title": "QA 테스터",
@@ -282,7 +282,7 @@
       "type": "정규직",
       "keywords": ["QA", "QC", "Jira", "Wiki", "GoogleWorkspace"],
       "location": "판교",
-      "createdAt": "2023-02-06T11:10:04+09:00"
+      "createdAt": "2024-12-06T11:10:04+09:00"
     },
     {
       "title": "프론트엔드 개발자",
@@ -290,7 +290,7 @@
       "type": "정규직",
       "keywords": ["Frontend", "Vue", "HTML", "CSS", "ES6", "Git"],
       "location": "판교",
-      "createdAt": "2023-02-18T11:10:04+09:00"
+      "createdAt": "2024-12-18T11:10:04+09:00"
     },
     {
       "title": "프론트엔드 개발자",
@@ -298,7 +298,7 @@
       "type": "정규직",
       "keywords": ["Frontend", "Vue", "React", "HTML", "CSS", "ES6", "Git"],
       "location": "판교",
-      "createdAt": "2023-01-05T11:10:04+09:00"
+      "createdAt": "2024-12-05T11:10:04+09:00"
     }
   ]
 }

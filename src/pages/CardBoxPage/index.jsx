@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { asyncUpFetch } from "../../store/card/index";
 import Card from "../../components/Card";
 import { UpdateNumber } from "../../store/count";
+import { useFilter } from "../../hooks/useFilter";
+import { useDispatch, useSelector } from "react-redux";
 
 const MainContent = styled.div`
   display: flex;
@@ -43,29 +43,16 @@ const ListJob = styled.ul`
 `;
 
 const CardBoxPage = () => {
-  let data = useSelector((state) => state);
-  let dispatch = useDispatch();
+  const data = useSelector((state) => state);
+  // const dispatch = useDispatch();
+  const [filteredData] = useFilter();
 
-  useEffect(() => {
-    dispatch(asyncUpFetch());
-  }, [dispatch]);
+  
 
-  let updateData = data.cardData.value.filter((item) => {
-    let keyword = item.keywords.join().toLowerCase();
-    if (data.searchData === "") {
-      return item;
-    } else if (item.title.includes(data.searchData)) {
-      return item;
-    } else if (keyword.includes(data.searchData.toLowerCase())) {
-      return item;
-    } else {
-      return null;
-    }
-  });
-
-  useEffect(() => {
-    dispatch(UpdateNumber(updateData.length));
-  }, [dispatch, updateData]);
+  // useEffect(() => {
+  //   dispatch(UpdateNumber(filteredData.length));
+  //   console.log("렌더링");
+  // }, []);
 
   return (
     <main className="doc-main">
@@ -74,8 +61,8 @@ const CardBoxPage = () => {
         <MainContent>
           <ContentArticle>
             <h3>
-              채용 목록{" "}
-              <span style={{ color: "#999" }}>2023-02-18 업데이트 완료</span>
+              채용 목록
+              <span style={{ color: "#999" }}> 2024-12-18 업데이트 완료</span>
             </h3>
             <ListJob>
               {data.cardData.status === "fail" ? (
@@ -83,7 +70,7 @@ const CardBoxPage = () => {
                   통신과정에서 에러가 발생하였습니다.
                 </span>
               ) : (
-                updateData.map((value, index) => {
+                filteredData.map((value, index) => {
                 //   console.log(value);
                   return <Card key={index} item={value} />;
                 })

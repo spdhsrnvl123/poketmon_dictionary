@@ -4,7 +4,7 @@ let searchData = createSlice({
     name : 'searchData',
     initialState : "",
     reducers : {
-        InputData(state,action){
+        InputData(state, action){
             return state = action.payload;
         }
     }

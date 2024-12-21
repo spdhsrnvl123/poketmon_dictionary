@@ -1,9 +1,8 @@
 import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { InputData } from "../../store/search";
+import { useInput } from "../../hooks/useInput";
 
-const Search = styled.input`
+const StyledInput = styled.input`
   width: 400px;
   height: 43px;
   padding: 9px 18px;
@@ -17,19 +16,16 @@ const Search = styled.input`
 `;
 
 const Input = () => {
-    const ref = useRef();
-    let dispatch = useDispatch();
-    const onSearch = (e) => {
-        dispatch(InputData(e.target.value));
-  };
+  const ref = useRef();
+  const [handleChange] = useInput();
 
   useEffect(() => {
     ref.current.focus();
   });
 
   return (
-    <Search
-      onChange={onSearch}
+    <StyledInput
+      onChange={handleChange}
       ref={ref}
       type="text"
       placeholder="직무, 기술 키워드를 검색해보세요."
