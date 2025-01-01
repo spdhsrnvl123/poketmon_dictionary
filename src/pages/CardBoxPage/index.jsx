@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Card from "../../components/Card";
 import { UpdateNumber } from "../../store/count";
-import { useFilter } from "../../hooks/useFilter";
+// import { useFilter } from "../../hooks/useFilter";
 import { useDispatch, useSelector } from "react-redux";
+import { useFilter } from "../../hooks/useFilter";
+import { useInput } from "../../hooks/useInput";
 
 const MainContent = styled.div`
   display: flex;
@@ -43,11 +45,16 @@ const ListJob = styled.ul`
 `;
 
 const CardBoxPage = () => {
+  const [res, setRes] = useState(null)
   const data = useSelector((state) => state);
-  // const dispatch = useDispatch();
   const [filteredData] = useFilter();
+  const [isSearching] = useInput();
 
-  
+  useEffect(() => {
+    console.log(filteredData);
+    console.log(data);
+  }, [filteredData]);
+  // const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(UpdateNumber(filteredData.length));
@@ -70,10 +77,10 @@ const CardBoxPage = () => {
                   통신과정에서 에러가 발생하였습니다.
                 </span>
               ) : (
-                filteredData.map((value, index) => {
-                //   console.log(value);
+                filteredData?.map((value, index) => {
                   return <Card key={index} item={value} />;
                 })
+                // <span>검색중..</span>
               )}
             </ListJob>
           </ContentArticle>

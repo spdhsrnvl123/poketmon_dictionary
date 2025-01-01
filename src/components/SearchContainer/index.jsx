@@ -37,6 +37,7 @@ const ResultNumber = styled.em`
   font-size: 26px;
   /* background-color: black; */
 `;
+
 const SearchContainer = ()=>{
   const data = useSelector((state)=>state);
 

@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-let searchData = createSlice({
-    name : 'searchData',
-    initialState : "",
-    reducers : {
-        InputData(state, action){
-            return state = action.payload;
-        }
-    }
-})
+let searchResults = createSlice({
+  name: "searchResults",
+  initialState: "",
+  reducers: {
+    setSearchResults(state, action) {
+        console.log(action.payload);
+      return (state = action.payload);
+    },
+  },
+});
 
-export let { InputData } = searchData.actions;
-export default searchData;
+export let { setSearchResults } = searchResults.actions;
+export default searchResults;

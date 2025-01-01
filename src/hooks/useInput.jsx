@@ -1,12 +1,24 @@
 import { useDispatch } from "react-redux";
-import { InputData } from "../store/search";
+import { useState } from "react";
+import { setSearchResults } from "../store/search";
 
 export const useInput = () => {
-  let dispatch = useDispatch();
+  const [searchData, setSearchData] = useState("");
+  const dispatch = useDispatch();
 
   const handleSearch = (e) => {
-    dispatch(InputData(e.target.value));
+    console.log(e);
+    if(e.target.value !== ""){
+        setSearchData(e.target.value);
+    }else if(e.target.value === ""){
+        setSearchData("");
+    }
   };
 
-  return [handleSearch];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(setSearchResults(searchData));
+  }
+
+  return [handleSearch, handleSubmit];
 };

@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit"
 import cardData from './card'
-import searchData from "./search"
 import countData from "./count"
+import searchResults from "./search";
 
 export default configureStore({
-    reducer : {
-        cardData : cardData.reducer,
-        searchData : searchData.reducer,
-        countData : countData.reducer
-    }
-})
+  reducer: {
+    cardData: cardData.reducer,
+    searchResults: searchResults.reducer,
+    countData: countData.reducer,
+  },
+});
