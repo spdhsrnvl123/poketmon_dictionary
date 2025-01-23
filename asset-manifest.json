@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/MEGA-MELON/static/js/main.48d93f7d.js",
-    "static/media/banner.gif": "/MEGA-MELON/static/media/banner.64bde2b1d396f77ca448.gif",
-    "index.html": "/MEGA-MELON/index.html",
-    "main.48d93f7d.js.map": "/MEGA-MELON/static/js/main.48d93f7d.js.map"
+    "main.js": "/poketmon_dictionary/static/js/main.7d1085ca.js",
+    "static/media/bg.jpg": "/poketmon_dictionary/static/media/bg.73d4f577ff05bf006a64.jpg",
+    "index.html": "/poketmon_dictionary/index.html",
+    "main.7d1085ca.js.map": "/poketmon_dictionary/static/js/main.7d1085ca.js.map"
   },
   "entrypoints": [
-    "static/js/main.48d93f7d.js"
+    "static/js/main.7d1085ca.js"
   ]
 }
