@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/poketmon_dictionary/static/js/main.b28b51fa.js",
+    "main.js": "/poketmon_dictionary/static/js/main.cdf377d7.js",
     "static/media/bg.jpg": "/poketmon_dictionary/static/media/bg.73d4f577ff05bf006a64.jpg",
     "index.html": "/poketmon_dictionary/index.html",
-    "main.b28b51fa.js.map": "/poketmon_dictionary/static/js/main.b28b51fa.js.map"
+    "main.cdf377d7.js.map": "/poketmon_dictionary/static/js/main.cdf377d7.js.map"
   },
   "entrypoints": [
-    "static/js/main.b28b51fa.js"
+    "static/js/main.cdf377d7.js"
   ]
 }
