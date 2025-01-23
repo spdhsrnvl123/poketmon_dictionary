@@ -3,9 +3,10 @@ import styled from "styled-components";
 import SearchContainer from "./components/SearchContainer";
 import CardBoxPage from "./pages/CardBoxPage";
 import GlobalStyle from "./assets/styles/GlobalStyle";
+import { useSelector } from "react-redux";
 
 const Title = styled.h1`
-  font-size: 40px;
+  font-size: 30px;
   color : #4876EF;
   height: 37px;
   text-align: center;
@@ -15,6 +16,7 @@ const Title = styled.h1`
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+  width: 100%;
 `;
 
 const Footer = styled.footer`
@@ -46,19 +48,20 @@ const Footer = styled.footer`
 `;
 
 function App() {
+
   return (
     <>
       <GlobalStyle />
-      <Title>CodeHire</Title>
+      <Title>Pokemon dictionary</Title>
       <SearchContainer />
       <CardBoxPage />
       <Footer>
         <div className="inner_footer">
-          <small>&copy; Developer Notice</small>
+          <small>&copy; poketmon dictionary</small>
           <div className="area_link">
-            <span>회사소개</span>
-            <span>채용절차</span>
-            <span>직무소개</span>
+            <span>beverage</span>
+            <span>goods</span>
+            <span>store</span>
           </div>
         </div>
       </Footer>

@@ -7,7 +7,7 @@ export const useInput = () => {
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
-    console.log(e);
+    console.log(e.target.value);
     if(e.target.value !== ""){
         setSearchData(e.target.value);
     }else if(e.target.value === ""){

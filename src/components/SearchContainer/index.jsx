@@ -49,7 +49,7 @@ const SearchContainer = ()=>{
         </BundleInp>
       </WrapSearch>
       <ResultText>
-        검색 결과 <ResultNumber>{data.countData}</ResultNumber>건
+        Search results <ResultNumber>{data.countData}</ResultNumber>건
       </ResultText>
     </SubTit>
   );

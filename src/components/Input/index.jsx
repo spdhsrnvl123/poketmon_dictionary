@@ -63,7 +63,7 @@ const Input = () => {
         onChange={handleSearch}
         ref={ref}
         type="text"
-        placeholder="직무, 기술 키워드를 검색해보세요."
+        placeholder="Search for the Pokemon you want."
       />
       <ButtonStyle />
     </form>

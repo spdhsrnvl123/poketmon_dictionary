@@ -2,38 +2,48 @@ import styled from "styled-components";
 import { FaCalendarDay } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
-const List = styled.li`
-  position: relative;
-  &::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3px;
-    height: 100%;
-    font-size: 10px;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: -1px;
-    content: "NEW";
-    opacity: ${(props) => props.transparency};
-  }
+// const List = styled.li`
+//   position: relative;
+//   &::before {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     z-index: 1;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 3px;
+//     height: 100%;
+//     font-size: 10px;
+//     color: #fff;
+//     font-weight: bold;
+//     letter-spacing: -1px;
+//     content: "NEW";
+//     opacity: ${(props) => props.transparency};
+//   }
 
-  &::after {
-    position: absolute;
-    top: 12px;
-    left: -17px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
-    font-size: 40px;
-    /* color: #ffdd00; */
-    content: "\f0a4";
-    opacity: ${(props) => props.transparency};
-  }
+//   &::after {
+//     position: absolute;
+//     top: 12px;
+//     left: -17px;
+//     font-family: "Font Awesome 5 Free";
+//     font-weight: 900;
+//     margin-right: 10px;
+//     font-size: 40px;
+//     /* color: #ffdd00; */
+//     content: "\f0a4";
+//     opacity: ${(props) => props.transparency};
+//   }
+// `;
+const List = styled.li`
+  align-items: center;
+  height: 86px;
+  /* padding: 18px; */
+  box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  width: 100%;
+  /* background-color: skyblue; */
+  margin: 22px 22px; /* 좌우는 중앙 정렬, 위아래만 22px */
 `;
 
 const TitleJob = styled.div`
@@ -86,12 +96,11 @@ const BundleBadge = styled.span`
 `;
 
 const DescJob = styled.div`
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
-  width: 20%;
-  background-color:#f7fafe;
+  /* position: absolute; */
+  /* height: 100%; */
+  /* top: 0; */
+  /* right: 0; */
+  background-color: #c6c6c6;
 `;
 
 const WrapTxt = styled.div`
@@ -130,59 +139,67 @@ const Day = styled.div`
   white-space: nowrap;
 `;
 
+const Content = styled.div`
+  display: flex;
+`
+
 const Card = ({ item }) => {
-  const dateA = new Date("2024-12-07");
-  const dateB = new Date(item.createdAt.slice(0, 10));
+  // const dateA = new Date("2024-12-07");
+  // const dateB = new Date(item.createdAt.slice(0, 10));
 
   //현재 날짜와 공고된 날짜의 차이를 계산하는 메서드
-  const getDate = () => {
-    return Math.floor(
-      (dateA.getTime() - dateB.getTime()) / (24 * 60 * 60 * 1000)
-    );
-  };
+  // const getDate = () => {
+  //   return Math.floor(
+  //     (dateA.getTime() - dateB.getTime()) / (24 * 60 * 60 * 1000)
+  //   );
+  // };
 
-  const resentData = () => {
-    if (getDate() === 0) {
-      return "today";
-    } else if (getDate() === 1) {
-      return "1 day ago";
-    } else if (getDate() === 2) {
-      return "2 day ago";
-    } else {
-      return item.createdAt.slice(5, 10);
-    }
-  };
+  // const resentData = () => {
+  //   if (getDate() === 0) {
+  //     return "today";
+  //   } else if (getDate() === 1) {
+  //     return "1 day ago";
+  //   } else if (getDate() === 2) {
+  //     return "2 day ago";
+  //   } else {
+  //     return item.createdAt.slice(5, 10);
+  //   }
+  // };
+  // console.log(item)
+
+  // console.log(item.types.join(","))
 
   return (
     <>
-      <List transparency={getDate() <= 2 ? 1 : 0}>
+      {/* <List transparency={getDate() <= 2 ? 1 : 0}> */}
+      <List>
         <TitleJob>
-          <a href="#none" className="link_title">
-            <strong>
-              {item.title}
-              <em>{item.type}</em>
-            </strong>
-          </a>
-          <BundleBadge>
-            {item.keywords.map((v, i) => {
+          <Content>
+            <img src={item.imageUrl} />
+            <a href="#none" className="link_title">
+              <strong>
+                {item.name}
+                <em>{item.types.join(",")}</em>
+              </strong>
+            </a>
+            <p>{item.description}</p>
+          </Content>
+
+          {/* <BundleBadge> */}
+            {/* {item.keywords.map((v, i) => {
               return (
                 <a key={i} href="#none">
                   {v}
                 </a>
               );
-            })}
-          </BundleBadge>
+            })} */}
+          {/* </BundleBadge> */}
         </TitleJob>
         <DescJob>
           <BadgeType>{item.job}</BadgeType>
           <WrapTxt>
-            <Day>
-              <FaCalendarDay />~{resentData()}
-            </Day>
-            <Location>
-              <FaLocationDot />
-              {item.location}
-            </Location>
+            <Day>{/* <FaCalendarDay />~{resentData()} */}</Day>
+            <Location></Location>
           </WrapTxt>
         </DescJob>
       </List>

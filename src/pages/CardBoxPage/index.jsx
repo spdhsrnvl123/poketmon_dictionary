@@ -6,6 +6,7 @@ import { UpdateNumber } from "../../store/count";
 import { useDispatch, useSelector } from "react-redux";
 import { useFilter } from "../../hooks/useFilter";
 import { useInput } from "../../hooks/useInput";
+import { asyncUpFetch } from "../../store/card";
 
 const MainContent = styled.div`
   display: flex;
@@ -25,19 +26,7 @@ const ContentArticle = styled.div`
 `;
 
 const ListJob = styled.ul`
-  margin-top: 17px;
-  padding-bottom: 48px;
-  li {
-    position: relative;
-    align-items: center;
-    height: 86px;
-    padding: 18px 0;
-    box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.25);
-    box-sizing: border-box;
-    & + li {
-      margin-top: 7px;
-    }
-  }
+  width: 100%;
   img {
     display: block;
     margin: 0 auto;
@@ -49,12 +38,12 @@ const CardBoxPage = () => {
   const data = useSelector((state) => state);
   const [filteredData] = useFilter();
   const [isSearching] = useInput();
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
     console.log(filteredData);
-    console.log(data);
   }, [filteredData]);
-  // const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(UpdateNumber(filteredData.length));
@@ -62,14 +51,12 @@ const CardBoxPage = () => {
   // }, []);
 
   return (
-    <main className="doc-main">
-      <section className="inner-main">
+    <>
         <h2 className="screen_out">채용 데모 페이지 본문</h2>
         <MainContent>
           <ContentArticle>
             <h3>
-              채용 목록
-              <span style={{ color: "#999" }}> 2024-12-18 업데이트 완료</span>
+              <span style={{ color: "#999" }}>Poketmon List</span>
             </h3>
             <ListJob>
               {data.cardData.status === "fail" ? (
@@ -85,8 +72,7 @@ const CardBoxPage = () => {
             </ListJob>
           </ContentArticle>
         </MainContent>
-      </section>
-    </main>
+    </>
   );
 };
 

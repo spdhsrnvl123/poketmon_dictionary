@@ -13,13 +13,15 @@ export const useFilter = () => {
     dispatch(asyncUpFetch());
   }, []);
 
+  // console.log(data);
+
   //필터링 로직
   useEffect(() => {
       const result = data.cardData.value.filter((item) => {
-        const keyword = item.keywords.join().toLowerCase();
+        const keyword = item.name.toLowerCase();
         if (data.searchResults === "") {
           return item;
-        } else if (item.title.includes(data.searchResults)) {
+        } else if (keyword.includes(data.searchResults)) {
           return item;
         } else if (keyword.includes(data.searchResults.toLowerCase())) {
           return item;
