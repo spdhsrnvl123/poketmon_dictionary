@@ -21,11 +21,11 @@ const WrapSearch = styled.div`
 
 const BundleInp = styled.div`
     position: relative;
-    width: 400px;
     margin: 0 auto;
     border-radius: 25px;
     box-shadow: 1px 1px 25px rgba(0, 0, 0, .4);
 `
+
 const ResultText = styled.p`
   font-size: 20px;
   color: #fff;

@@ -3,11 +3,12 @@ import styled from "styled-components";
 import { useInput } from "../../hooks/useInput";
 
 const StyledInput = styled.input`
-  width: 400px;
+/* background-color: red; */
+  width: 300px;
   height: 43px;
   padding: 9px 18px;
   font-size: 15px;
-  line-height: 43px;
+  /* line-height: 43px; */
   color: rgba(0, 0, 0, 0.8);
   border: 0 none;
   border-radius: 25px;

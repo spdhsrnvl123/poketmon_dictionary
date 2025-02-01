@@ -41,9 +41,8 @@ const List = styled.li`
   /* padding: 18px; */
   box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  width: 100%;
   /* background-color: skyblue; */
-  margin: 22px 22px; /* 좌우는 중앙 정렬, 위아래만 22px */
+  margin: 22px; /* 좌우는 중앙 정렬, 위아래만 22px */
 `;
 
 const TitleJob = styled.div`
@@ -144,31 +143,6 @@ const Content = styled.div`
 `
 
 const Card = ({ item }) => {
-  // const dateA = new Date("2024-12-07");
-  // const dateB = new Date(item.createdAt.slice(0, 10));
-
-  //현재 날짜와 공고된 날짜의 차이를 계산하는 메서드
-  // const getDate = () => {
-  //   return Math.floor(
-  //     (dateA.getTime() - dateB.getTime()) / (24 * 60 * 60 * 1000)
-  //   );
-  // };
-
-  // const resentData = () => {
-  //   if (getDate() === 0) {
-  //     return "today";
-  //   } else if (getDate() === 1) {
-  //     return "1 day ago";
-  //   } else if (getDate() === 2) {
-  //     return "2 day ago";
-  //   } else {
-  //     return item.createdAt.slice(5, 10);
-  //   }
-  // };
-  // console.log(item)
-
-  // console.log(item.types.join(","))
-
   return (
     <>
       {/* <List transparency={getDate() <= 2 ? 1 : 0}> */}

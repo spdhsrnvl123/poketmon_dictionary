@@ -13,8 +13,6 @@ const asyncUpFetch = createAsyncThunk("getData/asyncUpFetch", async () => {
         const pokemonResponse = await fetch(pokemon.url);
         const pokemonData = await pokemonResponse.json();
 
-        // console.log(pokemonData);
-
         // 포켓몬 설명을 가져오기
         const speciesResponse = await fetch(pokemonData.species.url);
         const speciesData = await speciesResponse.json();
@@ -32,6 +30,8 @@ const asyncUpFetch = createAsyncThunk("getData/asyncUpFetch", async () => {
       })
     );
 
+    console.log(pokemonDetails);
+
     // pokemonDetails가 정상적으로 로드됐는지 확인
     // console.log(pokemonDetails);
 
@@ -46,6 +46,7 @@ const asyncUpFetch = createAsyncThunk("getData/asyncUpFetch", async () => {
     throw new Error("Failed to fetch pokemon data"); // 에러 발생 시 처리
   }
 });
+
 
 // Redux slice 설정
 let cardData = createSlice({

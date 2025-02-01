@@ -3,7 +3,6 @@ import styled from "styled-components";
 import SearchContainer from "./components/SearchContainer";
 import CardBoxPage from "./pages/CardBoxPage";
 import GlobalStyle from "./assets/styles/GlobalStyle";
-import { useSelector } from "react-redux";
 
 const Title = styled.h1`
   font-size: 30px;
@@ -55,7 +54,7 @@ function App() {
       <Title>Pokemon dictionary</Title>
       <SearchContainer />
       <CardBoxPage />
-      <Footer>
+      {/* <Footer>
         <div className="inner_footer">
           <small>&copy; poketmon dictionary</small>
           <div className="area_link">
@@ -64,7 +63,7 @@ function App() {
             <span>store</span>
           </div>
         </div>
-      </Footer>
+      </Footer> */}
     </>
   );
 }
