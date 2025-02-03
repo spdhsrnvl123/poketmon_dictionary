@@ -35,6 +35,7 @@ const CardBoxPage = () => {
   const dispatch = useDispatch();
  
   useEffect(() => {
+    console.log(data);
     console.log(filteredData);
   }, [filteredData]);
 

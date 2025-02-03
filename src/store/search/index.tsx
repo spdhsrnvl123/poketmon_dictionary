@@ -5,7 +5,6 @@ let searchResults = createSlice({
   initialState: "",
   reducers: {
     setSearchResults(state, action) {
-        console.log(action.payload);
       return (state = action.payload);
     },
   },

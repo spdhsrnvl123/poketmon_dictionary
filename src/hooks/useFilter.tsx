@@ -13,8 +13,6 @@ export const useFilter = () => {
     dispatch(asyncUpFetch());
   }, []);
 
-  // console.log(data);
-
   //필터링 로직
   useEffect(() => {
       const result = data.cardData.value.filter((item) => {

@@ -1,48 +1,11 @@
 import styled from "styled-components";
-import { FaCalendarDay } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
 
-// const List = styled.li`
-//   position: relative;
-//   &::before {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     z-index: 1;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 3px;
-//     height: 100%;
-//     font-size: 10px;
-//     color: #fff;
-//     font-weight: bold;
-//     letter-spacing: -1px;
-//     content: "NEW";
-//     opacity: ${(props) => props.transparency};
-//   }
-
-//   &::after {
-//     position: absolute;
-//     top: 12px;
-//     left: -17px;
-//     font-family: "Font Awesome 5 Free";
-//     font-weight: 900;
-//     margin-right: 10px;
-//     font-size: 40px;
-//     /* color: #ffdd00; */
-//     content: "\f0a4";
-//     opacity: ${(props) => props.transparency};
-//   }
-// `;
 const List = styled.li`
   align-items: center;
   height: 86px;
-  /* padding: 18px; */
   box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  /* background-color: skyblue; */
-  margin: 22px; /* 좌우는 중앙 정렬, 위아래만 22px */
+  margin: 22px;
 `;
 
 const TitleJob = styled.div`
@@ -95,10 +58,6 @@ const BundleBadge = styled.span`
 `;
 
 const DescJob = styled.div`
-  /* position: absolute; */
-  /* height: 100%; */
-  /* top: 0; */
-  /* right: 0; */
   background-color: #c6c6c6;
 `;
 
@@ -145,7 +104,6 @@ const Content = styled.div`
 const Card = ({ item }) => {
   return (
     <>
-      {/* <List transparency={getDate() <= 2 ? 1 : 0}> */}
       <List>
         <TitleJob>
           <Content>
@@ -158,21 +116,10 @@ const Card = ({ item }) => {
             </a>
             <p>{item.description}</p>
           </Content>
-
-          {/* <BundleBadge> */}
-            {/* {item.keywords.map((v, i) => {
-              return (
-                <a key={i} href="#none">
-                  {v}
-                </a>
-              );
-            })} */}
-          {/* </BundleBadge> */}
         </TitleJob>
         <DescJob>
           <BadgeType>{item.job}</BadgeType>
           <WrapTxt>
-            <Day>{/* <FaCalendarDay />~{resentData()} */}</Day>
             <Location></Location>
           </WrapTxt>
         </DescJob>

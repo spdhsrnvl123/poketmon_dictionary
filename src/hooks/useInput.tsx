@@ -6,19 +6,20 @@ export const useInput = () => {
   const [searchData, setSearchData] = useState("");
   const dispatch = useDispatch();
 
-  const handleSearch = (e) => {
-    console.log(e.target.value);
-    if(e.target.value !== ""){
-        setSearchData(e.target.value);
-    }else if(e.target.value === ""){
-        setSearchData("");
+  // 입력창 텍스트 검사
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value !== "") {
+      setSearchData(e.target.value);
+    } else if (e.target.value === "") {
+      setSearchData("");
     }
   };
 
-  const handleSubmit = (e) => {
+  // 텍스트 조회
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     dispatch(setSearchResults(searchData));
-  }
+  };
 
   return [handleSearch, handleSubmit];
 };
