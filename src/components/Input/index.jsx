@@ -3,12 +3,10 @@ import styled from "styled-components";
 import { useInput } from "../../hooks/useInput";
 
 const StyledInput = styled.input`
-/* background-color: red; */
   width: 300px;
   height: 43px;
   padding: 9px 18px;
   font-size: 15px;
-  /* line-height: 43px; */
   color: rgba(0, 0, 0, 0.8);
   border: 0 none;
   border-radius: 25px;
@@ -51,11 +49,13 @@ const ButtonStyle = styled.button`
 `;
 
 const Input = () => {
-  const ref = useRef();
-  const [handleSearch, handleSubmit ] = useInput();
+  const ref = useRef(null);
+  const [searchData, handleSearch, handleSubmit] = useInput();
 
   useEffect(() => {
-    ref.current.focus();
+    if (ref.current) {
+      ref.current.focus(); // ref.current가 null이 아니면 focus() 호출
+    }
   });
 
   return (
@@ -65,6 +65,7 @@ const Input = () => {
         ref={ref}
         type="text"
         placeholder="Search for the Pokemon you want."
+        value={searchData} // input 값은 state로 관리
       />
       <ButtonStyle />
     </form>

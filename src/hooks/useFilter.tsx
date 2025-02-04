@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { asyncUpFetch } from "../store/card";
 import { useDispatch, useSelector } from "react-redux";
 import { UpdateNumber } from "../store/count";
+import { AppDispatch, RootState } from "../store/store";
+import { Pokemon } from "../types/pokemon";
 
 export const useFilter = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state);
-  const [filteredData, setFilteredData] = useState(null);
+  const dispatch = useDispatch<AppDispatch>();
+  const data = useSelector((state : RootState) => state);
+  const [filteredData, setFilteredData] = useState<Pokemon[] | null>(null);
 
   //데이터 받아오기
   useEffect(() => {
@@ -15,7 +17,7 @@ export const useFilter = () => {
 
   //필터링 로직
   useEffect(() => {
-      const result = data.cardData.value.filter((item) => {
+      const result : Pokemon[] = data.cardData.value.filter((item) => {
         const keyword = item.name.toLowerCase();
         if (data.searchResults === "") {
           return item;

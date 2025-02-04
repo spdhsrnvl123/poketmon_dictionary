@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Pokemon } from "../../types/pokemon";
 
 const List = styled.li`
   align-items: center;
@@ -101,13 +102,17 @@ const Content = styled.div`
   display: flex;
 `
 
-const Card = ({ item }) => {
+interface CardProps {
+  item: Pokemon; // item은 Pokemon 타입
+}
+
+const Card: React.FC<CardProps> = ({ item }) => {
   return (
     <>
       <List>
         <TitleJob>
           <Content>
-            <img src={item.imageUrl} />
+            <img src={item.imageUrl} alt="" />
             <a href="#none" className="link_title">
               <strong>
                 {item.name}
@@ -118,7 +123,6 @@ const Card = ({ item }) => {
           </Content>
         </TitleJob>
         <DescJob>
-          <BadgeType>{item.job}</BadgeType>
           <WrapTxt>
             <Location></Location>
           </WrapTxt>

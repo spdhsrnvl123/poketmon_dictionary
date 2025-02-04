@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 let searchResults = createSlice({
   name: "searchResults",
   initialState: "",
   reducers: {
-    setSearchResults(state, action) {
+    setSearchResults(state, action: PayloadAction<string>) {
       return (state = action.payload);
     },
   },

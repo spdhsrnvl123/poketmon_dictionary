@@ -16,10 +16,10 @@ export const useInput = () => {
   };
 
   // 텍스트 조회
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setSearchResults(searchData));
   };
 
-  return [handleSearch, handleSubmit];
+  return [searchData, handleSearch, handleSubmit];
 };

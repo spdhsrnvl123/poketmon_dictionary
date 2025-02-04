@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components"
 import Input from "../Input";
 import bgImage from "../../assets/images/bg.jpg"
+import { RootState } from "../../store/store";
 
 const SubTit = styled.nav`
   display: grid;
@@ -39,7 +40,8 @@ const ResultNumber = styled.em`
 `;
 
 const SearchContainer = ()=>{
-  const data = useSelector((state)=>state);
+  const data = useSelector((state: RootState) => state);
+
 
   return (
     <SubTit>

@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Card from "../../components/Card";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useFilter } from "../../hooks/useFilter";
-import { useInput } from "../../hooks/useInput";
+import { RootState } from "../../store/store";
 
 const MainContent = styled.div`
   display: flex;
@@ -28,16 +27,8 @@ const ListJob = styled.ul`
 `;
 
 const CardBoxPage = () => {
-  const [res, setRes] = useState(null)
-  const data = useSelector((state)  => state);
+  const data = useSelector((state: RootState) => state);
   const [filteredData] = useFilter();
-  const [isSearching] = useInput();
-  const dispatch = useDispatch();
- 
-  useEffect(() => {
-    console.log(data);
-    console.log(filteredData);
-  }, [filteredData]);
 
   return (
     <>
@@ -51,6 +42,7 @@ const CardBoxPage = () => {
               <span style={{ color: "blue", fontSize: "18px" }}>로딩중...</span>
             ) : (
               filteredData?.map((value, index) => {
+                console.log(value)
                 return <Card key={index} item={value} />;
               })
             )}
