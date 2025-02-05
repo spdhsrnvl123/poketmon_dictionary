@@ -49,7 +49,7 @@ const ButtonStyle = styled.button`
 `;
 
 const Input = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLInputElement>(null);
   const [searchData, handleSearch, handleSubmit] = useInput();
 
   useEffect(() => {

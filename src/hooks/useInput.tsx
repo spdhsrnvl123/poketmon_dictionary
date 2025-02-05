@@ -2,7 +2,11 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { setSearchResults } from "../store/search";
 
-export const useInput = () => {
+export const useInput = () :[
+  string,
+  (e: React.ChangeEvent<HTMLInputElement>) => void,
+  (e: React.FormEvent<HTMLFormElement>) => void
+] => {
   const [searchData, setSearchData] = useState("");
   const dispatch = useDispatch();
 

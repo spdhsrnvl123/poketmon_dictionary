@@ -3,10 +3,9 @@
       "target": "ES5",
       "module": "CommonJS",
       "strict": true,
-      "allowJs": true,
       "esModuleInterop": true,
       "jsx": "react-jsx",
-      "resolveJsonModule": true
+      "resolveJsonModule": true,
     },
     "include": ["src"]
 }

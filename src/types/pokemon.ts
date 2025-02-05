@@ -1,14 +1,15 @@
+// 처음 포켓몬 데이터에 접근할때 데이터
+export interface PokemonSummary {
+  name: string;
+  url: string;
+}
+
 export interface Pokemon {
   name: string;
   imageUrl: string;
   id: number;
   types: string[];
   description: string;
-}
-
-export interface PokemonSummary {
-  name: string;
-  url: string;
 }
 
 export interface Language {
