@@ -1,8 +1,7 @@
 # Poketmon_dictionary
 
 ## 배포
-https://spdhsrnvl123.github.io/MEGA-MELON/
-
+https://spdhsrnvl123.github.io/poketmon_dictionary/
 
 ## 프로젝트 실행 방법
 1. git clone하여 프로젝트를 내려받습니다.

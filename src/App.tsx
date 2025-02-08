@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import SearchContainer from "./components/SearchContainer";
-import CardBoxPage from "./pages/CardBoxPage";
 import GlobalStyle from "./assets/styles/GlobalStyle";
+import Router from "./router/router";
 
 const Title = styled.h1`
   font-size: 30px;
@@ -53,7 +53,7 @@ function App() {
       <GlobalStyle />
       <Title>Pokemon dictionary</Title>
       <SearchContainer />
-      <CardBoxPage />
+      <Router />
       {/* <Footer>
         <div className="inner_footer">
           <small>&copy; poketmon dictionary</small>

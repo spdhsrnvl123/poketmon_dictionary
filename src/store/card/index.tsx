@@ -15,15 +15,12 @@ const asyncUpFetch = createAsyncThunk<Pokemon[], void>(
       // 각 포켓몬 URL을 통해 상세 정보를 가져오기
       const pokemonDetails = await Promise.all(
         data.results.map(async (pokemon : PokemonSummary) : Promise<Pokemon> => {
-          console.log(pokemon);
           const pokemonResponse = await fetch(pokemon.url);
           const pokemonData = await pokemonResponse.json();
 
           // 포켓몬 설명을 가져오기
           const speciesResponse = await fetch(pokemonData.species.url);
           const speciesData = await speciesResponse.json();
-
-          console.log(speciesData)
 
           const description = speciesData.flavor_text_entries.find(
             (entry: FlavorTextEntry) => entry.language.name === "en"

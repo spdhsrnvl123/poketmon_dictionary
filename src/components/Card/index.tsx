@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Pokemon } from "../../types/pokemon";
+import { useNavigate } from "react-router-dom";
 
 const List = styled.li`
   align-items: center;
@@ -7,6 +8,7 @@ const List = styled.li`
   box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   margin: 22px;
+  cursor: pointer;
 `;
 
 const TitleJob = styled.div`
@@ -100,16 +102,22 @@ const Day = styled.div`
 
 const Content = styled.div`
   display: flex;
-`
+`;
 
 interface CardProps {
   item: Pokemon; // item은 Pokemon 타입
 }
 
 const Card: React.FC<CardProps> = ({ item }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`card/${item.id}`);
+  };
+
   return (
     <>
-      <List>
+      <List onClick={handleClick}>
         <TitleJob>
           <Content>
             <img src={item.imageUrl} alt="" />

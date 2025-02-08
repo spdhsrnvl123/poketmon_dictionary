@@ -41,7 +41,6 @@ const ResultNumber = styled.em`
 const SearchContainer = ()=>{
   const data = useSelector((state: RootState) => state);
 
-
   return (
     <SubTit>
       <WrapSearch>

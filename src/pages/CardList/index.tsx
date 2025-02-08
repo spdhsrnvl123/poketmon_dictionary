@@ -3,6 +3,7 @@ import Card from "../../components/Card";
 import { useSelector } from "react-redux";
 import { useFilter } from "../../hooks/useFilter";
 import { RootState } from "../../store/store";
+import { Outlet } from "react-router-dom";
 
 const MainContent = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const ListJob = styled.ul`
   }
 `;
 
-const CardBoxPage = () => {
+const CardList = () => {
   const data = useSelector((state: RootState) => state);
   const [filteredData] = useFilter();
 
@@ -42,15 +43,15 @@ const CardBoxPage = () => {
               <span style={{ color: "blue", fontSize: "18px" }}>로딩중...</span>
             ) : (
               filteredData?.map((value, index) => {
-                console.log(value)
                 return <Card key={index} item={value} />;
               })
             )}
           </ListJob>
+          <Outlet />
         </ContentArticle>
       </MainContent>
     </>
   );
 };
 
-export default CardBoxPage;
+export default CardList;
