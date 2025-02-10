@@ -112,7 +112,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`card/${item.id}`);
+    navigate(`poketmon/${item.id}`);
   };
 
   return (

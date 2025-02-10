@@ -7,7 +7,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<CardList />}>
-          <Route path="card/:cardId" element={<CardDetail />} />
+          <Route path="poketmon/:poketmonId" element={<CardDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
