@@ -141,7 +141,7 @@ function CardDetail() {
           height={350}
         />
       </div>
-      <Button onClick={() => navigate("/")}>X</Button>
+      <Button onClick={() => navigate("/poketmon_dictionary")}>X</Button>
     </Modal>
   );
 }

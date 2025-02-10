@@ -6,7 +6,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CardList />}>
+        <Route path="/poketmon_dictionary" element={<CardList />}>
           <Route path="poketmon/:poketmonId" element={<CardDetail />} />
         </Route>
       </Routes>
