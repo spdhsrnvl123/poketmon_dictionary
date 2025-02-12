@@ -62,7 +62,6 @@ const Input = () => {
     <form onSubmit={handleSubmit}>
       <StyledInput
         onChange={handleSearch}
-        ref={ref}
         type="text"
         placeholder="Search for the Pokemon you want."
         value={searchData} // input 값은 state로 관리
