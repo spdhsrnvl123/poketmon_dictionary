@@ -5,9 +5,9 @@ export interface PokemonSummary {
 }
 
 export interface Pokemon {
+  id: number;
   name: string;
   imageUrl: string;
-  id: number;
   types: string[];
   description: string;
 }

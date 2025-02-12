@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components"
 import Input from "../Input";
-import bgImage from "../../assets/images/bg.jpg"
+import bgImage from "../../assets/images/bg_1.gif"
 import { RootState } from "../../store/store";
 
 const SubTit = styled.nav`

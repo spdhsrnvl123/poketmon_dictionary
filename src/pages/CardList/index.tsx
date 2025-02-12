@@ -10,7 +10,6 @@ const MainContent = styled.div`
   justify-content: center;
   height: calc(100vh - 293px);
   overflow: scroll;
-  padding-top:29px;
   background-color: #f8f8f9;
 `;
 
@@ -35,15 +34,12 @@ const CardList = () => {
     <>
       <MainContent>
         <ContentArticle>
-          <h3>
-            <button style={{ color: "#999" }}>See more Pokemon</button>
-          </h3>
           <ListJob>
             {data.cardData.status === "Loading" ? (
               <span style={{ color: "blue", fontSize: "18px" }}>로딩중...</span>
             ) : (
-              filteredData?.map((value, index) => {
-                return <Card key={index} item={value} />;
+              filteredData?.map((value) => {
+                return <Card key={value.id} item={value} />;
               })
             )}
           </ListJob>

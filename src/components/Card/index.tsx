@@ -1,114 +1,55 @@
 import styled from "styled-components";
 import { Pokemon } from "../../types/pokemon";
 import { useNavigate } from "react-router-dom";
+import circle from "../../assets/images/circle.gif"
 
 const List = styled.li`
   align-items: center;
-  height: 86px;
   box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   margin: 22px;
   cursor: pointer;
+  max-width: 334px;
+  height: 80px;
+  border-radius: 10px;
 `;
 
 const TitleJob = styled.div`
   margin-left: 2px;
   padding: 0 5px;
-  strong {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 21px;
-    em {
-      display: inline-block;
-      margin-left: 10px;
-      font-size: 12px;
-      color: #999999;
-    }
-  }
-  .link_title {
-    display: inline-block;
-  }
-`;
-
-const BundleBadge = styled.span`
-  overflow-x: scroll;
-  display: block;
-  margin-top: 5px;
-  font-size: 0;
-  white-space: nowrap;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  a {
-    display: inline-block;
-    height: 21px;
-    padding: 0 8px;
-    font-size: 10px;
-    color: #808080;
-    line-height: 21px;
-    background-color: #f0f0f0;
-    border-radius: 3px;
-    box-sizing: border-box;
-    & + a {
-      margin-left: 5px;
-    }
-  }
-`;
-
-const DescJob = styled.div`
-  background-color: #c6c6c6;
-`;
-
-const WrapTxt = styled.div`
-  span {
-    & + span {
-      margin-left: 10px;
-    }
-  }
-`;
-
-const BadgeType = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 7px;
-  font-size: 10px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #415a8d;
-  white-space: nowrap;
-`;
-
-const Location = styled.div`
-  position: absolute;
-  bottom: 18px;
-  right: 2px;
-  font-size: 12px;
-  white-space: nowrap;
-`;
-
-const Day = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 2px;
-  font-size: 12px;
-  white-space: nowrap;
 `;
 
 const Content = styled.div`
   display: flex;
+  align-items: center;
+  img {
+    width: 60px;
+    height: 60px;
+    background-image: url(${circle});
+    background-size: contain;
+    border-radius: 100%;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 21px;
+    .name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #3b3f5c;
+    }
+    span {
+      font-weight: bold;
+      color: #B8BBD6;
+    }
+  }
 `;
 
 interface CardProps {
   item: Pokemon; // item은 Pokemon 타입
 }
 
-const Card: React.FC<CardProps> = ({ item }) => {
+const Card = ({ item } : CardProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -121,20 +62,17 @@ const Card: React.FC<CardProps> = ({ item }) => {
         <TitleJob>
           <Content>
             <img src={item.imageUrl} alt="" />
-            <a href="#none" className="link_title">
-              <strong>
+            <div className="description">
+              <a href="#none" className="name">
                 {item.name}
-                <em>{item.types.join(",")}</em>
-              </strong>
-            </a>
-            <p>{item.description}</p>
+              </a>
+              <span>{item.types.join(",")}</span>
+              <p>
+                {item.description.length > 80 ? item.description.slice(0, 80) + "..." : item.description}
+              </p>
+            </div>
           </Content>
         </TitleJob>
-        <DescJob>
-          <WrapTxt>
-            <Location></Location>
-          </WrapTxt>
-        </DescJob>
       </List>
     </>
   );

@@ -3,20 +3,10 @@ import styled from "styled-components";
 import SearchContainer from "./components/SearchContainer";
 import GlobalStyle from "./assets/styles/GlobalStyle";
 import Router from "./router/router";
-
-const Title = styled.h1`
-  font-size: 30px;
-  color : #4876EF;
-  height: 37px;
-  text-align: center;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  font-family: "Noto Sans", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  width: 100%;
-`;
+import Header from "./layouts/Header";
+import AddButton from "./components/AddButton";
+import UpButton from "./components/UpButton";
+import Category from "./layouts/Category";
 
 const Footer = styled.footer`
   min-width: 100%;
@@ -51,9 +41,12 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Title>Pokemon dictionary</Title>
+      <Header />
       <SearchContainer />
+      <Category />
       <Router />
+      <AddButton />
+      <UpButton />
       {/* <Footer>
         <div className="inner_footer">
           <small>&copy; poketmon dictionary</small>
