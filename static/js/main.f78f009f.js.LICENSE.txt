@@ -5,6 +5,12 @@
  */
 
 /*!
+ * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
+
+/*!
 * @svgdotjs/svg.resize.js - An extension for svg.js which allows to resize elements which are selected
 * @version 2.0.4
 * https://github.com/svgdotjs/svg.resize.js
