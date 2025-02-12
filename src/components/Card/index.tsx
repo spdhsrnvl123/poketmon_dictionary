@@ -68,7 +68,7 @@ const Card = ({ item } : CardProps) => {
               </a>
               <span>{item.types.join(",")}</span>
               <p>
-                {item.description.length > 80 ? item.description.slice(0, 80) + "..." : item.description}
+                {item.description.length > 70 ? item.description.slice(0, 70) + "..." : item.description}
               </p>
             </div>
           </Content>

@@ -25,9 +25,8 @@ export const useInput = () :[
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setSearchResults(searchData));
-    // 검색 후 키보드 내리기
     if (ref.current) {
-      ref.current.blur(); // 포커스 해제하여 키보드 내리기
+      ref.current.blur();
     }
   };
 
