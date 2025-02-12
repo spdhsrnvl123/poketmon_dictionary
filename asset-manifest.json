@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/poketmon_dictionary/static/css/main.e26c3517.css",
-    "main.js": "/poketmon_dictionary/static/js/main.f78f009f.js",
+    "main.js": "/poketmon_dictionary/static/js/main.3880e14d.js",
     "static/media/bg_1.gif": "/poketmon_dictionary/static/media/bg_1.6ae0ee2e921058379d89.gif",
     "static/media/circle.gif": "/poketmon_dictionary/static/media/circle.67923237fff915773320.gif",
     "static/media/logo.png": "/poketmon_dictionary/static/media/logo.aacbdca56acd203be09c.png",
     "index.html": "/poketmon_dictionary/index.html",
     "main.e26c3517.css.map": "/poketmon_dictionary/static/css/main.e26c3517.css.map",
-    "main.f78f009f.js.map": "/poketmon_dictionary/static/js/main.f78f009f.js.map"
+    "main.3880e14d.js.map": "/poketmon_dictionary/static/js/main.3880e14d.js.map"
   },
   "entrypoints": [
     "static/css/main.e26c3517.css",
-    "static/js/main.f78f009f.js"
+    "static/js/main.3880e14d.js"
   ]
 }
