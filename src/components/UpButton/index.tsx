@@ -1,11 +1,12 @@
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 
 const UpButtonStyle = styled.button`
   position: fixed;
-  bottom: -4px;
+  /* bottom: -4px; */
+  bottom: 20px; /* 버튼 위치가 화면 밖으로 안 나가도록 수정 */
   right: 2px;
   transform: translate(-50%, -50%);
   padding: 4px 10px;
@@ -18,9 +19,10 @@ const UpButtonStyle = styled.button`
 
 
 function UpButton() {
+
   return (
     <UpButtonStyle>
-      <FontAwesomeIcon icon={faChevronUp} size='2x' />
+      <FontAwesomeIcon icon={faChevronUp} size="2x" />
     </UpButtonStyle>
   );
 }

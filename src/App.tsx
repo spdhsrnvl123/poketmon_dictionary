@@ -46,7 +46,6 @@ function App() {
       <Category />
       <Router />
       <AddButton />
-      <UpButton />
       {/* <Footer>
         <div className="inner_footer">
           <small>&copy; poketmon dictionary</small>

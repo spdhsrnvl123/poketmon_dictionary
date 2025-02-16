@@ -52,14 +52,14 @@ function Category() {
 
   const types = Array.from(new Set(types2.flat()));
 
-  console.log(types);
+  
   return (
     <CategoryContent>
       <ArrowButton className="swiper-button-prev">
         <FontAwesomeIcon icon={faCaretLeft} />
       </ArrowButton>
       <Swiper
-        spaceBetween={12}
+        spaceBetween={6}
         slidesPerView={6}
         onSlideChange={() => console.log("slide change")}
         navigation={{
@@ -69,6 +69,9 @@ function Category() {
         modules={[Navigation]}
         className="mySwiper"
       >
+        <SwiperSlide>
+          <CategoryButton type={"All"} />
+        </SwiperSlide>
         {types.map((type) => {
           return (
             <SwiperSlide key={type}>

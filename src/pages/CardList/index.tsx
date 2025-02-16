@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import Card from "../../components/Card";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useFilter } from "../../hooks/useFilter";
 import { RootState } from "../../store/store";
 import { Outlet } from "react-router-dom";
+import { AppDispatch } from "../../store/store";
+import { useEffect } from "react";
+import { asyncUpFetch } from "../../store/card";
+import UpButton from "../../components/UpButton";
 
 const MainContent = styled.div`
   display: flex;
@@ -28,6 +32,10 @@ const ListJob = styled.ul`
 
 const CardList = () => {
   const data = useSelector((state: RootState) => state);
+  const dispatch = useDispatch<AppDispatch>();
+  useEffect(() => {
+    dispatch(asyncUpFetch());
+  }, []);
   const [filteredData] = useFilter();
 
   return (
@@ -42,6 +50,7 @@ const CardList = () => {
                 return <Card key={value.id} item={value} />;
               })
             )}
+            <UpButton />
           </ListJob>
           <Outlet />
         </ContentArticle>
