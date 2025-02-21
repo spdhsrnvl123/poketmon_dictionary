@@ -34,7 +34,7 @@ const CardList = () => {
   const data = useSelector((state: RootState) => state);
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    dispatch(asyncUpFetch());
+    dispatch(asyncUpFetch(0));
   }, []);
   const [filteredData] = useFilter();
 
@@ -46,8 +46,8 @@ const CardList = () => {
             {data.cardData.status === "Loading" ? (
               <span style={{ color: "blue", fontSize: "18px" }}>로딩중...</span>
             ) : (
-              filteredData?.map((value) => {
-                return <Card key={value.id} item={value} />;
+              filteredData?.map((value,index) => {
+                return <Card key={`${value.id}-${index}`} item={value} />;
               })
             )}
             <UpButton />

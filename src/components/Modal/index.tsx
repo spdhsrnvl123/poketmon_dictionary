@@ -19,7 +19,6 @@ const ModalContent = styled.div`
   background-color: #ffffff;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  animation: represent 0.6s ease-in-out;
 `;
 
 interface ModalProps {

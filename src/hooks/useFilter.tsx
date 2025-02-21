@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { asyncUpFetch } from "../store/card";
 import { useDispatch, useSelector } from "react-redux";
 import { UpdateNumber } from "../store/count";
 import { AppDispatch, RootState } from "../store/store";

@@ -2,19 +2,20 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { FlavorTextEntry, Pokemon, PokemonSummary, PokemonType } from "../../types/pokemon";
 
 // 비동기 함수: 포켓몬 데이터를 가져오고 추가 정보를 얻기
-const asyncUpFetch = createAsyncThunk<Pokemon[], void>(
+const asyncUpFetch = createAsyncThunk<Pokemon[], number>(
   "getData/asyncUpFetch",
-  async () => {
+  async (offset) => {
+    console.log(offset)
     try {
       // 포켓몬 목록을 가져오기
       const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=200"
+        `https://pokeapi.co/api/v2/pokemon?limit=200&offset=${offset}`
       );
       const data = await response.json();
 
       // 각 포켓몬 URL을 통해 상세 정보를 가져오기
       const pokemonDetails = await Promise.all(
-        data.results.map(async (pokemon : PokemonSummary) : Promise<Pokemon> => {
+        data.results.map(async (pokemon: PokemonSummary): Promise<Pokemon> => {
           const pokemonResponse = await fetch(pokemon.url);
           const pokemonData = await pokemonResponse.json();
 
@@ -30,7 +31,7 @@ const asyncUpFetch = createAsyncThunk<Pokemon[], void>(
             name: pokemon.name, // 포켓몬 이름
             imageUrl: pokemonData.sprites.front_default, // 포켓몬 이미지
             id: pokemonData.id, // 포켓몬 ID
-            types: pokemonData.types.map((type:PokemonType) => type.type.name), // 포켓몬 타입들
+            types: pokemonData.types.map((type: PokemonType) => type.type.name), // 포켓몬 타입들
             description: description || "No description available",
           };
         })
@@ -64,7 +65,8 @@ let cardData = createSlice({
         state.status = "Loading"; // 데이터 로딩 중
       })
       .addCase(asyncUpFetch.fulfilled, (state, action) => {
-        state.value = action.payload; // 데이터 로딩 완료 후 값 저장
+        console.log(action.payload)
+        state.value = [...state.value, ...action.payload]; // 데이터 로딩 완료 후 값 저장
         state.status = "complete"; // 로딩 완료 상태
       })
       .addCase(asyncUpFetch.rejected, (state) => {
@@ -74,5 +76,5 @@ let cardData = createSlice({
   },
 });
 
-export default cardData; // cardData slice를 export
-export { asyncUpFetch }; // asyncUpFetch thunk를 export
+export default cardData;
+export { asyncUpFetch };

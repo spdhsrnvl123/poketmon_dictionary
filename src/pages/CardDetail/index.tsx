@@ -12,9 +12,9 @@ interface ApexChartOptions {
   chart: {
     height: number;
     type: "radar"; // 차트의 타입을 'radar'로 고정
-  };
-  title: {
-    text: string;
+    toolbar: {
+      show: boolean; // 🔹 햄버거 메뉴 제거
+    };
   };
   yaxis: {
     stepSize: number;
@@ -36,14 +36,23 @@ interface State {
   options: ApexChartOptions;
 }
 
+const Title = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b3f5c;
+`;
+
 const Button = styled.button`
   width: 40px;
   height: 40px;
   font-size: 26px;
-  color: black;
-  background-color: aliceblue;
+  color: #989898;
+  background-color: transparent;
   text-shadow: 2px 1px 3px rgba(233, 183, 183, 0.274);
   animation: represent 0.7s ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
 
 function CardDetail() {
@@ -52,7 +61,7 @@ function CardDetail() {
   const { poketmonId } = useParams();
 
   const data = useSelector((state: RootState) => state);
-
+ 
   useEffect(() => {
     if (typeof poketmonId === "string") {
       dispatch(fetchPokemonById(poketmonId));
@@ -92,12 +101,12 @@ function CardDetail() {
       chart: {
         height: 350,
         type: "radar",
-      },
-      title: {
-        text: pokemonName,
+        toolbar: {
+          show: false, // 🔹 햄버거 메뉴 제거
+        },
       },
       yaxis: {
-        stepSize: 20,
+        stepSize: 30,
       },
       xaxis: {
         categories: categories,
@@ -121,9 +130,6 @@ function CardDetail() {
         ...prevState,
         options: {
           ...prevState.options,
-          title: {
-            text: data.pokemonDetailSlice.value.name,
-          },
         },
         series: [{ name: "Stats", data: statValues }],
       }));
@@ -132,7 +138,7 @@ function CardDetail() {
 
   return (
     <Modal>
-      포켓몬 상세페이지
+      <Title>{pokemonName}</Title>
       <div id="chart">
         <ReactApexChart
           options={state.options}
