@@ -1,11 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { FlavorTextEntry, Pokemon, PokemonSummary, PokemonType } from "../../types/pokemon";
+import {
+  FlavorTextEntry,
+  Pokemon,
+  PokemonSummary,
+  PokemonType,
+} from "../../types/pokemon";
 
 // 비동기 함수: 포켓몬 데이터를 가져오고 추가 정보를 얻기
 const asyncUpFetch = createAsyncThunk<Pokemon[], number>(
   "getData/asyncUpFetch",
   async (offset) => {
-    console.log(offset)
+    console.log(offset);
     try {
       // 포켓몬 목록을 가져오기
       const response = await fetch(
@@ -50,7 +55,6 @@ const asyncUpFetch = createAsyncThunk<Pokemon[], number>(
   }
 );
 
-
 // Redux slice 설정
 let cardData = createSlice({
   name: "cardData", // slice 이름
@@ -65,8 +69,15 @@ let cardData = createSlice({
         state.status = "Loading"; // 데이터 로딩 중
       })
       .addCase(asyncUpFetch.fulfilled, (state, action) => {
-        console.log(action.payload)
-        state.value = [...state.value, ...action.payload]; // 데이터 로딩 완료 후 값 저장
+        console.log(action.payload);
+
+        const newPokemons = action.payload.filter(
+          (newPokemon) =>
+            !state.value.some(
+              (existingPokemon) => existingPokemon.id === newPokemon.id
+            )
+        );
+        state.value = [...state.value, ...newPokemons]; // 데이터 로딩 완료 후 값 저장
         state.status = "complete"; // 로딩 완료 상태
       })
       .addCase(asyncUpFetch.rejected, (state) => {
