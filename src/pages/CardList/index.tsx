@@ -56,6 +56,11 @@ const CardList = () => {
       mainContentRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+  console.log(data.countData)
+
+useEffect(()=>{
+  handleScrollToTop()
+},[data.countData])
 
   return (
     <>
