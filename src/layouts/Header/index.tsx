@@ -37,7 +37,7 @@ function Header() {
       <Title>
         Pokemon <span>dictionary</span>
       </Title>
-      <FontAwesomeIcon icon={faBars} size="2x" />
+      <FontAwesomeIcon onClick={()=>alert("준비중입니다.")} icon={faBars} size="2x" />
     </Container>
   );
 }

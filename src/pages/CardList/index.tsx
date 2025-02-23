@@ -5,14 +5,15 @@ import { useFilter } from "../../hooks/useFilter";
 import { RootState } from "../../store/store";
 import { Outlet } from "react-router-dom";
 import { AppDispatch } from "../../store/store";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { asyncUpFetch } from "../../store/card";
-import UpButton from "../../components/UpButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const MainContent = styled.div`
   display: flex;
   justify-content: center;
-  height: calc(100vh - 293px);
+  height: calc(88vh - 235px);
   overflow: scroll;
   background-color: #f8f8f9;
 `;
@@ -24,10 +25,20 @@ const ContentArticle = styled.div`
 `;
 
 const ListJob = styled.ul`
-  img {
-    display: block;
-    margin: 0 auto;
-  }
+`;
+
+const UpButtonStyle = styled.button`
+  position: fixed;
+  /* bottom: -4px; */
+  bottom: 20px; /* 버튼 위치가 화면 밖으로 안 나가도록 수정 */
+  right: 2px;
+  transform: translate(-50%, -50%);
+  padding: 4px 10px;
+  font-weight: bold;
+  border-radius: 100%;
+  background-color: white;
+  padding: 8px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
 const CardList = () => {
@@ -38,21 +49,31 @@ const CardList = () => {
   }, []);
   const [filteredData] = useFilter();
 
+  const mainContentRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollToTop = (): void => {
+    if (mainContentRef.current) {
+      mainContentRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <MainContent>
-        <ContentArticle>
+        <ContentArticle ref={mainContentRef}>
           <ListJob>
             {data.cardData.status === "Loading" ? (
               <span style={{ color: "blue", fontSize: "18px" }}>로딩중...</span>
             ) : (
-              filteredData?.map((value,index) => {
-                return <Card key={`${value.id}-${index}`} item={value} />;
+              filteredData?.map((value, index) => {
+                return <Card key={`${value.id}-${index}`} item={value} index={index} />;
               })
             )}
-            <UpButton />
           </ListJob>
           <Outlet />
+          <UpButtonStyle onClick={handleScrollToTop}>
+            <FontAwesomeIcon icon={faChevronUp} size="2x" />
+          </UpButtonStyle>
         </ContentArticle>
       </MainContent>
     </>

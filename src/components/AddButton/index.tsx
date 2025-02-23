@@ -84,7 +84,7 @@ const addHandler = () => {
     <>
       {showMessage && <AddTextStyle>Added!!</AddTextStyle>}
       {showMessage_limit && <AddTextStyle>Up to 1000 units provided!!</AddTextStyle>}
-      <AddButtonStyle onClick={addHandler}>See more Pokemon</AddButtonStyle>;
+      <AddButtonStyle onClick={addHandler}>See more Pokemon</AddButtonStyle>
     </>
   );
 }

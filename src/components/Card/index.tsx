@@ -12,11 +12,24 @@ const List = styled.li`
   max-width: 334px;
   height: 80px;
   border-radius: 10px;
+  border-top-left-radius: 0px;
+  position: relative;
 `;
 
-const TitleJob = styled.div`
+const TitleJob = styled.div<{ index: any }>`
   margin-left: 2px;
   padding: 0 5px;
+  ::before {
+    content: "${(props) => props.index}";
+    position: absolute;
+    left: 0%;
+    top: -24%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
 `;
 
 const Content = styled.div`
@@ -47,19 +60,30 @@ const Content = styled.div`
 
 interface CardProps {
   item: Pokemon; // item은 Pokemon 타입
+  index : number
 }
 
-const Card = ({ item } : CardProps) => {
+const Card = ({ item, index } : CardProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate(`poketmon/${item.id}`);
   };
 
+  const indexNumber = (index : number)=>{
+    if(index <9){
+      return `00${index +1}`
+    }else if(index < 99){
+      return `0${index + 1}`;
+    }else{
+      return index+1;
+    }
+  }
+
   return (
     <>
       <List onClick={handleClick}>
-        <TitleJob>
+        <TitleJob index={indexNumber(index)}>
           <Content>
             <img src={item.imageUrl} alt="" />
             <div className="description">
@@ -68,7 +92,9 @@ const Card = ({ item } : CardProps) => {
               </a>
               <span>{item.types.join(",")}</span>
               <p>
-                {item.description.length > 70 ? item.description.slice(0, 70) + "..." : item.description}
+                {item.description.length > 70
+                  ? item.description.slice(0, 70) + "..."
+                  : item.description}
               </p>
             </div>
           </Content>

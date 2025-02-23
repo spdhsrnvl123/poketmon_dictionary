@@ -9,11 +9,12 @@ const SubTit = styled.nav`
   align-content: center;
   justify-content: center;
   width: 100%;
-  height: 223px;
+  height:200px;
   background-image: url(${bgImage});
-  background-size: cover; /* 배경 이미지를 컨테이너에 맞게 꽉 채움 */
+  background-size: cover;
   background-position: center; /* 이미지 중앙에 고정 */
   background-repeat: no-repeat; /* 배경 반복 없음 */
+  
 `;
 
 const WrapSearch = styled.div`
