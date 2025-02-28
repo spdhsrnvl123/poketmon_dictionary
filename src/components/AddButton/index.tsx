@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { asyncUpFetch } from "../../store/card";
 import { AppDispatch, RootState } from "../../store/store";
-import { Pokemon } from "../../types/pokemon";
+import { Pokemon } from "../../types/pokemons";
 import Modal from "../Modal";
+import { getPokemonData } from "../../store/pokemons";
 
 const AddButtonStyle = styled.button`
   background-color: #ffcc00;
@@ -39,7 +39,7 @@ const AddTextStyle = styled.div`
 function AddButton() {
   const dispatch = useDispatch<AppDispatch>();
   const [number, setNumber] = useState(0);
-  const pokemonData = useSelector<RootState, any>((state) => state.cardData);
+  const pokemonData = useSelector<RootState, any>((state) => state.pokemonData);
   const [showMessage, setShowMessage] = useState(false);
   const [showMessage_limit, setShowMessage_limit] = useState(false);
 
@@ -57,22 +57,20 @@ const addHandler = () => {
   // 200개 단위로 요청
   if (pokemonData.value.length === 200) {
     setNumber((number) => number + 200);
-    dispatch(asyncUpFetch(number));
+    dispatch(getPokemonData(number));
   }
   if (pokemonData.value.length === 400) {
     setNumber((number) => number + 200);
-    dispatch(asyncUpFetch(number));
+    dispatch(getPokemonData(number));
   }
   if (pokemonData.value.length === 600) {
     setNumber((number) => number + 200);
-    dispatch(asyncUpFetch(number));
+    dispatch(getPokemonData(number));
   }
   if (pokemonData.value.length === 800) {
     setNumber((number) => number + 200);
-    dispatch(asyncUpFetch(number));
+    dispatch(getPokemonData(number));
   }
-
-  console.log(number);
 
   setShowMessage(true); // 메시지 보이기
   setTimeout(() => {

@@ -43,7 +43,7 @@ const ArrowButton = styled.button`
 function Category() {
   const data = useSelector((state: RootState) => state);
 
-  const types2 = data.cardData.value.map((value)=>{
+  const types2 = data.pokemonData.value.map((value)=>{
     const typeObj : string[] = []
     typeObj.push(...value.types);
 
@@ -61,7 +61,6 @@ function Category() {
       <Swiper
         spaceBetween={6}
         slidesPerView={6}
-        onSlideChange={() => console.log("slide change")}
         navigation={{
           prevEl: ".swiper-button-prev",
           nextEl: ".swiper-button-next",

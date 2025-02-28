@@ -1,21 +1,18 @@
-import React from "react";
-import styled from "styled-components";
-import SearchContainer from "./components/SearchContainer";
 import GlobalStyle from "./assets/styles/GlobalStyle";
 import Router from "./router/router";
 import Header from "./layouts/Header";
 import AddButton from "./components/AddButton";
 import Category from "./layouts/Category";
+import SearchBar from "./layouts/SearchBar";
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Header />
-      <SearchContainer />
+      <SearchBar />
       <Category />
       <Router />
-
       <AddButton />
     </>
   );

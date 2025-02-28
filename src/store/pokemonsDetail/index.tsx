@@ -1,60 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PokemonsDetail } from "../../types/pokemonsDetail";
 
 
-// data.stats 배열의 각 요소에 대한 타입
-interface Stat {
-  base_stat: number;
-}
-
-// data.types 배열의 각 요소에 대한 타입
-interface TypeInfo {
-  type: {
-    name: string;
-  };
-}
-
-// data.abilities 배열의 각 요소에 대한 타입
-interface AbilityInfo {
-  ability: {
-    name: string;
-  };
-}
-
-// data의 전체 구조에 대한 타입
-interface PokemonData {
-  id: number;
-  name: string;
-  sprites: {
-    front_default: string;
-  };
-  types: TypeInfo[];
-  stats: Stat[];
-  height: number;  // cm 단위
-  weight: number;  // hectograms (100g 단위)
-  abilities: AbilityInfo[];
-}
-
-// pokemonInfo의 타입 정의
-interface PokemonInfo {
-  id: number;
-  name: string;
-  sprite: string;
-  types: string[];
-  stats: {
-    hp: number;
-    attack: number;
-    defense: number;
-    specialAttack: number;
-    specialDefense: number;
-    speed: number;
-  };
-  height: number;  // 미터 단위
-  weight: number;  // kg 단위
-  abilities: string[];
-}
-
-const fetchPokemonById = createAsyncThunk(
-  "pokemon/fetchByName",
+const getPokemonDetailData = createAsyncThunk(
+  "pokemon/getPokemonDetailData",
   async (poketmonId: string) => {
     try {
       const response = await fetch(
@@ -64,7 +13,7 @@ const fetchPokemonById = createAsyncThunk(
       const data = await response.json();
 
       // 포켓몬 기본 정보 추출
-      const pokemonInfo: PokemonInfo = {
+      const pokemonInfo: PokemonsDetail = {
         id: data.id,
         name: data.name,
         sprite: data.sprites.front_default,
@@ -90,9 +39,7 @@ const fetchPokemonById = createAsyncThunk(
   }
 );
 
-const pokemonDetailSlice = createSlice({
-  name: "pokemonDetail",
-  initialState: {
+const initialState = {
     value: {
       id: 0,
       name: "",
@@ -109,23 +56,27 @@ const pokemonDetailSlice = createSlice({
       height: 0,
       weight: 0,
       abilities: [],
-    } as PokemonInfo, // 타입 강제 지정
-    status: "Welcome",
-  },
+    }, // 타입 강제 지정
+    status: "Welcome"
+  } as any
+
+const pokemonDetailData = createSlice({
+  name: "pokemonDetailData",
+  initialState : initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchPokemonById.pending, (state, action) => {
+    builder.addCase(getPokemonDetailData.pending, (state, action) => {
       state.status = "Loading";
     });
-    builder.addCase(fetchPokemonById.fulfilled, (state, action) => {
+    builder.addCase(getPokemonDetailData.fulfilled, (state, action) => {
       state.value = action.payload;
       state.status = "complete";
     });
-    builder.addCase(fetchPokemonById.rejected, (state, action) => {
+    builder.addCase(getPokemonDetailData.rejected, (state, action) => {
       state.status = "fail";
     });
   },
 });
 
-export default pokemonDetailSlice; // cardData slice를 export
-export {fetchPokemonById};
+export default pokemonDetailData; 
+export { getPokemonDetailData };

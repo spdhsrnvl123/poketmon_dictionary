@@ -1,17 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CardList from '../pages/CardList';
-import CardDetail from '../pages/CardDetail';
+import PokemonsDetailPage from "../pages/PokemonDetailPage";
+import PokemonListPage from "../pages/PokemonListPage";
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/poketmon_dictionary" element={<CardList />}>
-          <Route path="poketmon/:poketmonId" element={<CardDetail />} />
+        <Route path="/poketmon_dictionary" element={<PokemonListPage />}>
+          <Route path="poketmon/:poketmonId" element={<PokemonsDetailPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default Router
+export default Router;

@@ -6,9 +6,9 @@ import { RootState } from "../../store/store";
 import { Outlet } from "react-router-dom";
 import { AppDispatch } from "../../store/store";
 import { useEffect, useRef } from "react";
-import { asyncUpFetch } from "../../store/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { getPokemonData } from "../../store/pokemons";
 
 const MainContent = styled.div`
   display: flex;
@@ -24,13 +24,11 @@ const ContentArticle = styled.div`
   }
 `;
 
-const ListJob = styled.ul`
-`;
+const ListJob = styled.ul``;
 
 const UpButtonStyle = styled.button`
   position: fixed;
-  /* bottom: -4px; */
-  bottom: 20px; /* 버튼 위치가 화면 밖으로 안 나가도록 수정 */
+  bottom: 20px;
   right: 2px;
   transform: translate(-50%, -50%);
   padding: 4px 10px;
@@ -41,11 +39,11 @@ const UpButtonStyle = styled.button`
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
-const CardList = () => {
+const PokemonListPage = () => {
   const data = useSelector((state: RootState) => state);
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    dispatch(asyncUpFetch(0));
+    dispatch(getPokemonData(0));
   }, []);
   const [filteredData] = useFilter();
 
@@ -56,22 +54,27 @@ const CardList = () => {
       mainContentRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-  console.log(data.countData)
 
-useEffect(()=>{
-  handleScrollToTop()
-},[data.countData])
+  useEffect(() => {
+    handleScrollToTop();
+  }, [data.countData]);
 
   return (
     <>
       <MainContent>
         <ContentArticle ref={mainContentRef}>
           <ListJob>
-            {data.cardData.status === "Loading" ? (
+            {data.pokemonData.status === "Loading" ? (
               <span style={{ color: "blue", fontSize: "18px" }}>로딩중...</span>
             ) : (
               filteredData?.map((value, index) => {
-                return <Card key={`${value.id}-${index}`} item={value} index={index} />;
+                return (
+                  <Card
+                    key={`${value.id}-${index}`}
+                    item={value}
+                    index={index}
+                  />
+                );
               })
             )}
           </ListJob>
@@ -85,4 +88,4 @@ useEffect(()=>{
   );
 };
 
-export default CardList;
+export default PokemonListPage;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { UpdateNumber } from "../store/count";
 import { AppDispatch, RootState } from "../store/store";
-import { Pokemon } from "../types/pokemon";
+import { Pokemon } from "../types/pokemons";
 
 export const useFilter = () => {
   const data = useSelector((state: RootState) => state);
@@ -11,7 +11,7 @@ export const useFilter = () => {
 
   // 검색별 & 타입별 포켓몬 필터링
   useEffect(() => {
-    const result = data.cardData.value.filter((item : Pokemon) => {
+    const result = data.pokemonData.value.filter((item : Pokemon) => {
       const keyword = item.name.toLowerCase();
       const types = item.types;
 

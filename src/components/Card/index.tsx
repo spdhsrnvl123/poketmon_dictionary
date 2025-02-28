@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Pokemon } from "../../types/pokemon";
+import { Pokemon } from "../../types/pokemons";
 import { useNavigate } from "react-router-dom";
-import circle from "../../assets/images/circle.gif"
+import circle from "../../assets/images/circle.gif";
 
 const List = styled.li`
   align-items: center;
@@ -53,32 +53,32 @@ const Content = styled.div`
     }
     span {
       font-weight: bold;
-      color: #B8BBD6;
+      color: #b8bbd6;
     }
   }
 `;
 
 interface CardProps {
   item: Pokemon; // item은 Pokemon 타입
-  index : number
+  index: number;
 }
 
-const Card = ({ item, index } : CardProps) => {
+const Card = ({ item, index }: CardProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate(`poketmon/${item.id}`);
   };
 
-  const indexNumber = (index : number)=>{
-    if(index <9){
-      return `00${index +1}`
-    }else if(index < 99){
+  const indexNumber = (index: number) => {
+    if (index < 9) {
+      return `00${index + 1}`;
+    } else if (index < 99) {
       return `0${index + 1}`;
-    }else{
-      return index+1;
+    } else {
+      return index + 1;
     }
-  }
+  };
 
   return (
     <>

@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../../components/Modal";
 import styled from "styled-components";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPokemonById } from "../../store/pokemonDetail";
 import { AppDispatch, RootState } from "../../store/store";
 import ReactApexChart from "react-apexcharts";
+import { getPokemonDetailData } from "../../store/pokemonsDetail";
 
-// ApexChart 옵션에 대한 타입 정의
 interface ApexChartOptions {
   chart: {
     height: number;
-    type: "radar"; // 차트의 타입을 'radar'로 고정
+    type: "radar";
     toolbar: {
-      show: boolean; // 🔹 햄버거 메뉴 제거
-    };
+      show: boolean;
+    }
   };
   yaxis: {
     stepSize: number;
@@ -24,13 +23,11 @@ interface ApexChartOptions {
   };
 }
 
-// series에 대한 타입 정의
 interface Series {
   name: string;
   data: number[];
 }
 
-// state에 대한 타입 정의
 interface State {
   series: Series[];
   options: ApexChartOptions;
@@ -81,24 +78,22 @@ const Img = styled.img`
   margin: 0 auto;
 `;
 
-function CardDetail() {
+function PokemonsDetailPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const { poketmonId } = useParams();
-
   const data = useSelector((state: RootState) => state);
- 
+
   useEffect(() => {
     if (typeof poketmonId === "string") {
-      dispatch(fetchPokemonById(poketmonId));
+      dispatch(getPokemonDetailData(poketmonId));
     }
   }, [dispatch, poketmonId]);
 
-  // pokemonDetailSlice.value가 없으면 기본값 설정
-  const pokemonName = data.pokemonDetailSlice.value?.name || "Loading...";
+  const pokemonName = data.pokemonDetailData.value?.name || "Loading...";
 
   // stats 데이터를 차트 데이터로 변환
-  const stats = data.pokemonDetailSlice.value?.stats || {};
+  const stats = data.pokemonDetailData.value?.stats || {};
   const categories = [
     "Attack",
     "Defense",
@@ -140,10 +135,9 @@ function CardDetail() {
     },
   });
 
-  // pokemonDetailSlice.value가 업데이트되면 chart 업데이트
   useEffect(() => {
-    if (data.pokemonDetailSlice.value) {
-      const stats = data.pokemonDetailSlice.value.stats || {};
+    if (data.pokemonDetailData.value) {
+      const stats = data.pokemonDetailData.value.stats || {};
       const statValues = [
         stats.attack || 0,
         stats.defense || 0,
@@ -160,12 +154,11 @@ function CardDetail() {
         series: [{ name: "Stats", data: statValues }],
       }));
     }
-  }, [data.pokemonDetailSlice.value]);
+  }, [data.pokemonDetailData.value]);
 
-  const item = data.cardData.value.filter((v)=>{
-      return v.name === pokemonName
-  })
-
+  const item = data.pokemonData.value.filter((v) => {
+    return v.name === pokemonName;
+  });
 
   return (
     <Modal>
@@ -186,4 +179,4 @@ function CardDetail() {
   );
 }
 
-export default CardDetail;
+export default PokemonsDetailPage;
