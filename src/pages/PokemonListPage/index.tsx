@@ -9,6 +9,8 @@ import { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { getPokemonData } from "../../store/pokemons";
+import loadingImg from "../../assets/images/loading.gif"
+import Category from "../../layouts/Category";
 
 const MainContent = styled.div`
   display: flex;
@@ -39,6 +41,10 @@ const UpButtonStyle = styled.button`
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
+const LoadingImg = styled.img`
+  width : 100px;
+`
+
 const PokemonListPage = () => {
   const data = useSelector((state: RootState) => state);
   const dispatch = useDispatch<AppDispatch>();
@@ -61,11 +67,12 @@ const PokemonListPage = () => {
 
   return (
     <>
+      {data.pokemonData.status ==="Loading" ? null :<Category />}
       <MainContent>
         <ContentArticle ref={mainContentRef}>
           <ListJob>
             {data.pokemonData.status === "Loading" ? (
-              <span style={{ color: "blue", fontSize: "18px" }}>로딩중...</span>
+              <LoadingImg src={loadingImg} alt="loading" />
             ) : (
               filteredData?.map((value, index) => {
                 return (

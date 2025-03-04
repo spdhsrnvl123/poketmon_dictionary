@@ -11,7 +11,6 @@ function App() {
       <GlobalStyle />
       <Header />
       <SearchBar />
-      <Category />
       <Router />
       <AddButton />
     </>

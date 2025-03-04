@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store/store";
 import ReactApexChart from "react-apexcharts";
 import { getPokemonDetailData } from "../../store/pokemonsDetail";
+import loadingImg from "../../assets/images/loading.gif";
+
 
 interface ApexChartOptions {
   chart: {
@@ -77,11 +79,14 @@ const Img = styled.img`
   align-items: center;
   margin: 0 auto;
 `;
+const LoadingImg = styled.img`
+  width: 100px;
+`;
 
 function PokemonsDetailPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { poketmonId } = useParams();
+  let { poketmonId } = useParams();
   const data = useSelector((state: RootState) => state);
 
   useEffect(() => {
@@ -90,7 +95,9 @@ function PokemonsDetailPage() {
     }
   }, [dispatch, poketmonId]);
 
-  const pokemonName = data.pokemonDetailData.value?.name || "Loading...";
+  const pokemonName = data.pokemonDetailData.value?.name || (
+    <LoadingImg src={loadingImg} alt="loading" />
+  );
 
   // stats 데이터를 차트 데이터로 변환
   const stats = data.pokemonDetailData.value?.stats || {};
